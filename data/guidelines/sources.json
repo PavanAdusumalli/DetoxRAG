@@ -1,0 +1,100 @@
+{
+  "_comment": "Guideline source manifest. PDFs are NOT committed; run `python scripts/fetch_guidelines.py` to download them from the publisher and verify checksums. Parsing settings (TOC pages, header patterns, chapter detection, exclusions) are per document because layouts differ.",
+  "documents": [
+    {
+      "document_id": "BJA-2023",
+      "file": "bja_withdrawal_jails_2023.pdf",
+      "title": "Guidelines for Managing Substance Withdrawal in Jails: A Tool for Local Government Officials, Jail Administrators, Correctional Officers, and Health Care Professionals",
+      "short_title": "Guidelines for Managing Substance Withdrawal in Jails",
+      "publisher": "U.S. Department of Justice, Bureau of Justice Assistance (BJA) and National Institute of Corrections (NIC)",
+      "publication_date": "2023-06",
+      "document_version": "NCJ 306491",
+      "source_url": "https://bja.ojp.gov/doc/guidelines-managing-substance-withdrawal-jails.pdf",
+      "sha256": "712958a85415d32a8c121140c54634f567e5a34d5abbc3ce1fef61c446db2fee",
+      "verified_on": "2026-11-11",
+      "usage_note": "Public U.S. government publication distributed free of charge by BJA. Indexed locally for research/demonstration; the PDF itself is not redistributed in this repository. Photographs are third-party (iStock) and are not used.",
+      "parsing": {
+        "toc_pdf_pages": [9, 10, 11, 12],
+        "page_label_patterns": ["^\\s*([0-9]+|[ivxlc]+)\\s*$", "^\\s*([0-9]+)(?=Guidelines for Managing Substance Withdrawal in Jails)"],
+        "page_label_search_lines": 1,
+        "header_line_patterns": [
+          "^\\s*([0-9]+|[ivxlc]+)\\s*$",
+          "^\\s*[0-9]*Guidelines for Managing Substance Withdrawal in Jails\\s*$",
+          "^\\s*BUREAU OF JUSTICE ASSISTANCE\\s*$"
+        ],
+        "header_search_lines": 3,
+        "inline_header_strip_regex": "^[0-9]+Guidelines for Managing Substance Withdrawal in Jails",
+        "toc_skip_regex": "^Recommendations$",
+        "chapter_regex": "^(Introduction|The Withdrawal Management Process|General Guidance|Alcohol Withdrawal|Sedative Withdrawal|Opioid Withdrawal|Stimulant Withdrawal|Appendixes|Appendix [A-Z]:.*|Endnotes)$",
+        "exclude_chapter_regex": "^(Appendixes|Appendix [ABHIJLM]:.*|Endnotes)$",
+        "exclude_reason": "Excluded: appendix divider, development team (A), methodology (B), industry relationships and field reviewers (H-J), acronym list (L), resource list (M), and endnotes — non-clinical content that adds retrieval noise.",
+        "recommendation_id_regex": "^((?:G|A|SH|O|S)-\\d+)\\.\\s"
+      }
+    },
+    {
+      "document_id": "BOP-2020",
+      "file": "bop_medically_supervised_withdrawal.pdf",
+      "title": "Medically Supervised Withdrawal for Inmates with Substance Use Disorders (Federal Bureau of Prisons Clinical Guidance)",
+      "short_title": "BOP Clinical Guidance: Medically Supervised Withdrawal",
+      "publisher": "Federal Bureau of Prisons (BOP)",
+      "publication_date": "2020-02",
+      "document_version": "February 2020",
+      "source_url": "https://www.bop.gov/resources/pdfs/medically_supervised_withdrawal_cg.pdf",
+      "sha256": "6aa885a1dc69c467a248345236e4f168ce433b4e195bae3829040394707b3f08",
+      "verified_on": "2026-11-11",
+      "usage_note": "BOP states this clinical guidance 'is made available to the public for informational purposes only.' Linked from https://www.bop.gov/resources/health_care_mngmt.jsp. Older than BJA-2023; retained as a second correctional-health source. Not redistributed in this repository.",
+      "parsing": {
+        "toc_pdf_pages": [3],
+        "page_label_patterns": ["^\\s*([0-9]+|[ivxlc]+)\\s*$"],
+        "page_label_search_lines": 4,
+        "header_line_patterns": [
+          "^\\s*([0-9]+|[ivxlc]+)\\s*$",
+          "^\\s*Federal Bureau of Prisons Medically Supervised Withdrawal\\s*$",
+          "^\\s*Clinical Guidance February 2020\\s*$",
+          "^\\s*APPENDIX \\d+, Page \\d+ of \\d+\\s*$"
+        ],
+        "header_search_lines": 4,
+        "toc_skip_regex": "^TABLE\\s+\\d+",
+        "subsection_headings": [
+          "DIAGNOSIS OF ALCOHOL USE DISORDERS AND WITHDRAWAL",
+          "PATIENT EVALUATION",
+          "ALCOHOL WITHDRAWAL SYNDROME",
+          "TREATMENT OF ALCOHOL WITHDRAWAL",
+          "THIAMINE REPLACEMENT",
+          "BENZODIAZEPINE THERAPY FOR ALCOHOL WITHDRAWAL",
+          "ALTERNATIVE/ADJUNCTIVE TREATMENTS FOR MILD ALCOHOL WITHDRAWAL",
+          "OTHER ADJUNCTIVE TREATMENTS OF ALCOHOL WITHDRAWAL",
+          "DIAGNOSIS OF BENZODIAZEPINE USE DISORDERS AND WITHDRAWAL",
+          "SYMPTOMS AND SIGNS OF BENZODIAZEPINE WITHDRAWAL",
+          "TREATMENT OF BENZODIAZEPINE WITHDRAWAL",
+          "TREATMENT WITH CLONAZEPAM",
+          "ADJUNCTIVE TREATMENTS OF BENZODIAZEPINE WITHDRAWAL",
+          "DIAGNOSIS OF BARBITURATE USE DISORDER AND WITHDRAWAL",
+          "SYMPTOMS AND SIGNS OF BARBITURATE WITHDRAWAL",
+          "TREATMENT OF BARBITURATE WITHDRAWAL",
+          "TREATMENT WITH PHENOBARBITAL",
+          "ADJUNCTIVE TREATMENTS FOR BARBITURATE WITHDRAWAL",
+          "DIAGNOSIS AND EVALUATION OF OPIOID USE DISORDERS",
+          "DIAGNOSIS OF OPIOID WITHDRAWAL",
+          "TREATMENT OF OPIOID WITHDRAWAL",
+          "TREATMENT WITH METHADONE",
+          "TREATMENT WITH BUPRENORPHINE",
+          "SYMPTOMATIC TREATMENT FOR OPIOID WITHDRAWAL",
+          "SYMPTOMATIC TREATMENT WITH CLONIDINE",
+          "INMATE COUNSELING AND EDUCATION"
+        ],
+        "chapter_regex": "^(\\d+\\.\\s+.*|DEFINITIONS|REFERENCES|APPENDIX \\d+\\..*)$",
+        "exclude_chapter_regex": "^(REFERENCES|APPENDIX [5-8]\\..*)$",
+        "exclude_reason": "Excluded: reference list and appendices 5-8 (near-identical patient-education handouts that would crowd retrieval results).",
+        "recommendation_id_regex": null
+      }
+    }
+  ],
+  "not_included": [
+    {
+      "publisher": "American Society of Addiction Medicine (ASAM)",
+      "source_url": "https://www.asam.org/quality-care/clinical-guidelines",
+      "reason": "ASAM clinical practice guidelines are copyrighted journal publications; reuse/redistribution terms were not verified as permitting local indexing in a public portfolio repository. Excluded pending review. Note that BJA-2023 is endorsed by ASAM and ASAM staff contributed to it."
+    }
+  ]
+}
