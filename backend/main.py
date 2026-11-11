@@ -19,6 +19,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.responses import Response
 
 from backend import __version__
 from backend.api.routes import guidelines, patients, rag, system
@@ -26,6 +27,19 @@ from backend.config import PROJECT_ROOT
 from backend.database.queries import InvalidIdentifier, RecordNotFound
 
 log = logging.getLogger("detoxrag.api")
+
+
+class FrontendFiles(StaticFiles):
+    """Serve the built UI. index.html must not be cached: it names the
+    content-hashed JS/CSS bundles, so a stale copy loads an old build."""
+
+    async def get_response(self, path: str, scope) -> Response:
+        response = await super().get_response(path, scope)
+        if path in ("", ".", "index.html") or not path.startswith("assets/"):
+            response.headers["Cache-Control"] = "no-cache"
+        else:
+            response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+        return response
 
 
 def configure_logging() -> None:
@@ -104,7 +118,7 @@ def create_app() -> FastAPI:
 
     dist = PROJECT_ROOT / "frontend" / "dist"
     if dist.exists():
-        app.mount("/", StaticFiles(directory=dist, html=True), name="frontend")
+        app.mount("/", FrontendFiles(directory=dist, html=True), name="frontend")
     return app
 
 

@@ -61,8 +61,8 @@ export function PatientHeader({ timeline, hours, onHours, extra }) {
 export default function Dashboard({ patientId, hours, onHours, onAsk }) {
   const tl = useApi(() => (patientId ? api.timeline(patientId, hours) : Promise.resolve(null)), [patientId, hours]);
   if (!patientId) return <Card><p className="empty">Select a synthetic patient from the list.</p></Card>;
-  if (tl.loading && !tl.data) return <Card><Loading label="Loading patient timeline…" /></Card>;
   if (tl.error) return <ErrorBox error={tl.error} onRetry={tl.reload} />;
+  if (!tl.data) return <Card><Loading label="Loading patient timeline…" /></Card>;
   const t = tl.data;
   return (
     <div className="stack">
