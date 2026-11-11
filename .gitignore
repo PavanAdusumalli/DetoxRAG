@@ -1,0 +1,35 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Local model weights (download with: python scripts/download_models.py)
+models/*
+!models/.gitkeep
+
+# Generated data / indexes (rebuild with scripts/)
+data/vector_store/*
+!data/vector_store/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+*.db
+*.sqlite
+*.sqlite3
+
+# Guideline PDFs are downloaded from their publishers, not redistributed here
+data/guidelines/*.pdf
+
+# Secrets / env
+.env
+
+# Node
+node_modules/
+frontend/dist/
+
+# OS / editors
+.DS_Store
+.vscode/*
+!.vscode/settings.json
+.idea/
