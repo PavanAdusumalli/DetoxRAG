@@ -49,6 +49,7 @@ export function fmtPct(x, digits = 1) {
 
 export function fmtMs(ms) {
   if (ms === null || ms === undefined) return "—";
+  if (ms < 1) return "<1 ms";
   return ms >= 1000 ? `${(ms / 1000).toFixed(1)} s` : `${Math.round(ms)} ms`;
 }
 

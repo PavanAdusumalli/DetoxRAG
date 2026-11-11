@@ -1,0 +1,4176 @@
+{
+  "run_id": "20261111-140655",
+  "created_at": "2026-11-11T20:06:57+00:00",
+  "environment": {
+    "machine": "arm64 \u00b7 macOS 26.6",
+    "python": "3.12.16",
+    "llm": "qwen3-4b-mlx-4bit",
+    "embedding": "qwen3-embedding-0.6b",
+    "temperature": 0.0,
+    "chunk_max_words": 220,
+    "retrieval_candidates": 20,
+    "rrf_k": 60,
+    "relevance_gate": 0.5
+  },
+  "retrieval": {
+    "k": 5,
+    "n_questions": 21,
+    "methods": {
+      "dense": {
+        "label": "Dense (Qwen3-Embedding + Chroma)",
+        "metrics": {
+          "recall_at_k": 0.8095,
+          "precision_at_k": 0.2286,
+          "mrr": 0.754,
+          "hit_at_1": 0.6667,
+          "mean_latency_ms": 26.3
+        }
+      },
+      "bm25": {
+        "label": "BM25 (BM25S)",
+        "metrics": {
+          "recall_at_k": 0.8571,
+          "precision_at_k": 0.2476,
+          "mrr": 0.7095,
+          "hit_at_1": 0.5714,
+          "mean_latency_ms": 0.2
+        }
+      },
+      "hybrid": {
+        "label": "Hybrid (RRF)",
+        "metrics": {
+          "recall_at_k": 0.9048,
+          "precision_at_k": 0.2571,
+          "mrr": 0.7579,
+          "hit_at_1": 0.619,
+          "mean_latency_ms": 26.6
+        }
+      }
+    },
+    "per_question": [
+      {
+        "id": "G01",
+        "question": "How often should the CIWA-Ar be repeated during alcohol withdrawal treatment?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.6,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BOP-2020-0065",
+            "BOP-2020-0064",
+            "BJA-2023-0071",
+            "BJA-2023-0151",
+            "BOP-2020-0017"
+          ],
+          "relevant": [
+            "BOP-2020-0065",
+            "BJA-2023-0071",
+            "BJA-2023-0151"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.6,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BOP-2020-0024",
+            "BJA-2023-0071",
+            "BJA-2023-0151",
+            "BOP-2020-0065",
+            "BOP-2020-0064"
+          ],
+          "relevant": [
+            "BJA-2023-0071",
+            "BJA-2023-0151",
+            "BOP-2020-0065"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.6,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BOP-2020-0065",
+            "BJA-2023-0071",
+            "BOP-2020-0064",
+            "BJA-2023-0151",
+            "BOP-2020-0024"
+          ],
+          "relevant": [
+            "BOP-2020-0065",
+            "BJA-2023-0071",
+            "BJA-2023-0151"
+          ]
+        }
+      },
+      {
+        "id": "G02",
+        "question": "How frequently should patients who used fentanyl or heroin be monitored with the COWS?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.6,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0152",
+            "BJA-2023-0151",
+            "BJA-2023-0102",
+            "BJA-2023-0125",
+            "BJA-2023-0124"
+          ],
+          "relevant": [
+            "BJA-2023-0152",
+            "BJA-2023-0151",
+            "BJA-2023-0125"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.6,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0125",
+            "BJA-2023-0152",
+            "BJA-2023-0151",
+            "BJA-2023-0111",
+            "BJA-2023-0098"
+          ],
+          "relevant": [
+            "BJA-2023-0125",
+            "BJA-2023-0152",
+            "BJA-2023-0151"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.6,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0152",
+            "BJA-2023-0125",
+            "BJA-2023-0151",
+            "BJA-2023-0102",
+            "BJA-2023-0111"
+          ],
+          "relevant": [
+            "BJA-2023-0152",
+            "BJA-2023-0125",
+            "BJA-2023-0151"
+          ]
+        }
+      },
+      {
+        "id": "G03",
+        "question": "What should custody staff do if a patient appears oversedated?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0072",
+            "BOP-2020-0006",
+            "BJA-2023-0026",
+            "BJA-2023-0127",
+            "BJA-2023-0043"
+          ],
+          "relevant": [
+            "BJA-2023-0072"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0072",
+            "BJA-2023-0040",
+            "BJA-2023-0048",
+            "BJA-2023-0017",
+            "BJA-2023-0026"
+          ],
+          "relevant": [
+            "BJA-2023-0072"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0072",
+            "BJA-2023-0026",
+            "BJA-2023-0040",
+            "BJA-2023-0043",
+            "BJA-2023-0067"
+          ],
+          "relevant": [
+            "BJA-2023-0072"
+          ]
+        }
+      },
+      {
+        "id": "G04",
+        "question": "Can alcohol withdrawal severity scales such as the CIWA-Ar be used on their own to diagnose withdrawal?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0068",
+            "BOP-2020-0064",
+            "BOP-2020-0017",
+            "BOP-2020-0065",
+            "BJA-2023-0071"
+          ],
+          "relevant": [
+            "BJA-2023-0068"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BOP-2020-0065",
+            "BJA-2023-0068",
+            "BOP-2020-0064",
+            "BJA-2023-0071",
+            "BJA-2023-0151"
+          ],
+          "relevant": [
+            "BJA-2023-0068"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0068",
+            "BOP-2020-0065",
+            "BOP-2020-0064",
+            "BJA-2023-0071",
+            "BOP-2020-0017"
+          ],
+          "relevant": [
+            "BJA-2023-0068"
+          ]
+        }
+      },
+      {
+        "id": "G05",
+        "question": "Should oral or intravenous alcohol be used to prevent or treat alcohol withdrawal?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0070",
+            "BOP-2020-0019",
+            "BOP-2020-0030",
+            "BJA-2023-0076",
+            "BJA-2023-0077"
+          ],
+          "relevant": [
+            "BJA-2023-0070"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BJA-2023-0075",
+            "BJA-2023-0070",
+            "BJA-2023-0080",
+            "BJA-2023-0083",
+            "BOP-2020-0022"
+          ],
+          "relevant": [
+            "BJA-2023-0070"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0070",
+            "BJA-2023-0075",
+            "BOP-2020-0030",
+            "BJA-2023-0080",
+            "BJA-2023-0077"
+          ],
+          "relevant": [
+            "BJA-2023-0070"
+          ]
+        }
+      },
+      {
+        "id": "G06",
+        "question": "What indicators of dehydration should staff watch for during withdrawal?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.4,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0154",
+            "BJA-2023-0047",
+            "BJA-2023-0072",
+            "BJA-2023-0049",
+            "BJA-2023-0022"
+          ],
+          "relevant": [
+            "BJA-2023-0154",
+            "BJA-2023-0072"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.4,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BJA-2023-0047",
+            "BJA-2023-0072",
+            "BJA-2023-0154",
+            "BJA-2023-0048",
+            "BJA-2023-0127"
+          ],
+          "relevant": [
+            "BJA-2023-0072",
+            "BJA-2023-0154"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.4,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BJA-2023-0047",
+            "BJA-2023-0154",
+            "BJA-2023-0072",
+            "BJA-2023-0127",
+            "BJA-2023-0022"
+          ],
+          "relevant": [
+            "BJA-2023-0154",
+            "BJA-2023-0072"
+          ]
+        }
+      },
+      {
+        "id": "G07",
+        "question": "Does a negative breath or urine alcohol test rule out the risk of alcohol withdrawal?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BJA-2023-0064",
+            "BJA-2023-0069",
+            "BJA-2023-0010",
+            "BOP-2020-0015",
+            "BJA-2023-0018"
+          ],
+          "relevant": [
+            "BJA-2023-0069"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0069",
+            "BJA-2023-0064",
+            "BJA-2023-0149",
+            "BJA-2023-0157",
+            "BJA-2023-0068"
+          ],
+          "relevant": [
+            "BJA-2023-0069"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BJA-2023-0064",
+            "BJA-2023-0069",
+            "BOP-2020-0015",
+            "BOP-2020-0016",
+            "BJA-2023-0024"
+          ],
+          "relevant": [
+            "BJA-2023-0069"
+          ]
+        }
+      },
+      {
+        "id": "G08",
+        "question": "Which factors increase the risk of complicated alcohol withdrawal?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0069",
+            "BJA-2023-0074",
+            "BJA-2023-0029",
+            "BJA-2023-0030",
+            "BJA-2023-0063"
+          ],
+          "relevant": [
+            "BJA-2023-0069"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0069",
+            "BJA-2023-0138",
+            "BOP-2020-0022",
+            "BJA-2023-0105",
+            "BJA-2023-0064"
+          ],
+          "relevant": [
+            "BJA-2023-0069"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0069",
+            "BJA-2023-0024",
+            "BJA-2023-0074",
+            "BJA-2023-0064",
+            "BJA-2023-0138"
+          ],
+          "relevant": [
+            "BJA-2023-0069"
+          ]
+        }
+      },
+      {
+        "id": "G09",
+        "question": "When is thiamine replacement indicated for patients in alcohol withdrawal?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.4,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BJA-2023-0080",
+            "BOP-2020-0020",
+            "BJA-2023-0075",
+            "BOP-2020-0030",
+            "BJA-2023-0166"
+          ],
+          "relevant": [
+            "BOP-2020-0020",
+            "BJA-2023-0075"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.4,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BOP-2020-0020",
+            "BOP-2020-0030",
+            "BOP-2020-0059",
+            "BJA-2023-0080",
+            "BJA-2023-0075"
+          ],
+          "relevant": [
+            "BOP-2020-0020",
+            "BJA-2023-0075"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.4,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BOP-2020-0020",
+            "BJA-2023-0080",
+            "BOP-2020-0030",
+            "BJA-2023-0075",
+            "BOP-2020-0059"
+          ],
+          "relevant": [
+            "BOP-2020-0020",
+            "BJA-2023-0075"
+          ]
+        }
+      },
+      {
+        "id": "G10",
+        "question": "How should opioid withdrawal symptom severity be monitored?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0124",
+            "BJA-2023-0102",
+            "BJA-2023-0101",
+            "BJA-2023-0001",
+            "BJA-2023-0125"
+          ],
+          "relevant": [
+            "BJA-2023-0124"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.2,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 5,
+          "retrieved": [
+            "BJA-2023-0125",
+            "BJA-2023-0103",
+            "BJA-2023-0111",
+            "BJA-2023-0161",
+            "BJA-2023-0124"
+          ],
+          "relevant": [
+            "BJA-2023-0124"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0124",
+            "BJA-2023-0125",
+            "BJA-2023-0102",
+            "BJA-2023-0111",
+            "BJA-2023-0101"
+          ],
+          "relevant": [
+            "BJA-2023-0124"
+          ]
+        }
+      },
+      {
+        "id": "G11",
+        "question": "Can custody staff be trained to administer the COWS?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.3333333333333333,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 3,
+          "retrieved": [
+            "BJA-2023-0044",
+            "BJA-2023-0043",
+            "BJA-2023-0124",
+            "BJA-2023-0045",
+            "BJA-2023-0002"
+          ],
+          "relevant": [
+            "BJA-2023-0124"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BJA-2023-0044",
+            "BJA-2023-0124",
+            "BJA-2023-0043",
+            "BJA-2023-0034",
+            "BJA-2023-0045"
+          ],
+          "relevant": [
+            "BJA-2023-0124"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.3333333333333333,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 3,
+          "retrieved": [
+            "BJA-2023-0044",
+            "BJA-2023-0043",
+            "BJA-2023-0124",
+            "BJA-2023-0045",
+            "BJA-2023-0002"
+          ],
+          "relevant": [
+            "BJA-2023-0124"
+          ]
+        }
+      },
+      {
+        "id": "G12",
+        "question": "How often should patients being treated for sedative withdrawal be clinically assessed?",
+        "dense": {
+          "recall_at_k": 0.5,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0092",
+            "BJA-2023-0089",
+            "BJA-2023-0088",
+            "BJA-2023-0037",
+            "BJA-2023-0086"
+          ],
+          "relevant": [
+            "BJA-2023-0092"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 0.5,
+          "precision_at_k": 0.2,
+          "rr": 0.2,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 5,
+          "retrieved": [
+            "BJA-2023-0161",
+            "BJA-2023-0111",
+            "BJA-2023-0089",
+            "BJA-2023-0036",
+            "BJA-2023-0092"
+          ],
+          "relevant": [
+            "BJA-2023-0092"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.4,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BJA-2023-0089",
+            "BJA-2023-0092",
+            "BJA-2023-0086",
+            "BJA-2023-0085",
+            "BJA-2023-0151"
+          ],
+          "relevant": [
+            "BJA-2023-0092",
+            "BJA-2023-0151"
+          ]
+        }
+      },
+      {
+        "id": "G13",
+        "question": "How should patients in stimulant withdrawal be monitored?",
+        "dense": {
+          "recall_at_k": 0.0,
+          "precision_at_k": 0.0,
+          "rr": 0.0,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": null,
+          "retrieved": [
+            "BJA-2023-0136",
+            "BJA-2023-0144",
+            "BJA-2023-0140",
+            "BOP-2020-0056",
+            "BJA-2023-0025"
+          ],
+          "relevant": []
+        },
+        "bm25": {
+          "recall_at_k": 0.0,
+          "precision_at_k": 0.0,
+          "rr": 0.0,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": null,
+          "retrieved": [
+            "BJA-2023-0125",
+            "BJA-2023-0020",
+            "BJA-2023-0138",
+            "BOP-2020-0056",
+            "BJA-2023-0111"
+          ],
+          "relevant": []
+        },
+        "hybrid": {
+          "recall_at_k": 0.0,
+          "precision_at_k": 0.0,
+          "rr": 0.0,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": null,
+          "retrieved": [
+            "BJA-2023-0136",
+            "BOP-2020-0056",
+            "BJA-2023-0025",
+            "BJA-2023-0144",
+            "BJA-2023-0138"
+          ],
+          "relevant": []
+        }
+      },
+      {
+        "id": "G14",
+        "question": "What is the minimum frequency of clinical assessments by qualified health care professionals during withdrawal management?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0037",
+            "BJA-2023-0092",
+            "BJA-2023-0023",
+            "BJA-2023-0036",
+            "BJA-2023-0039"
+          ],
+          "relevant": [
+            "BJA-2023-0037"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 0.0,
+          "precision_at_k": 0.0,
+          "rr": 0.0,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": null,
+          "retrieved": [
+            "BJA-2023-0039",
+            "BJA-2023-0040",
+            "BJA-2023-0151",
+            "BJA-2023-0038",
+            "BJA-2023-0103"
+          ],
+          "relevant": []
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BJA-2023-0039",
+            "BJA-2023-0037",
+            "BJA-2023-0092",
+            "BJA-2023-0040",
+            "BJA-2023-0151"
+          ],
+          "relevant": [
+            "BJA-2023-0037"
+          ]
+        }
+      },
+      {
+        "id": "G15",
+        "question": "Should suicide risk be assessed during withdrawal management?",
+        "dense": {
+          "recall_at_k": 0.5,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0055",
+            "BJA-2023-0029",
+            "BJA-2023-0037",
+            "BJA-2023-0030",
+            "BJA-2023-0056"
+          ],
+          "relevant": [
+            "BJA-2023-0055"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.4,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0055",
+            "BOP-2020-0010",
+            "BJA-2023-0037",
+            "BJA-2023-0139",
+            "BJA-2023-0140"
+          ],
+          "relevant": [
+            "BJA-2023-0055",
+            "BJA-2023-0139"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 0.5,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0055",
+            "BJA-2023-0037",
+            "BJA-2023-0030",
+            "BJA-2023-0029",
+            "BJA-2023-0011"
+          ],
+          "relevant": [
+            "BJA-2023-0055"
+          ]
+        }
+      },
+      {
+        "id": "G16",
+        "question": "Should pregnant patients who are physically dependent on opioids undergo opioid withdrawal?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.5,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 2,
+          "retrieved": [
+            "BJA-2023-0129",
+            "BJA-2023-0128",
+            "BJA-2023-0057",
+            "BJA-2023-0130",
+            "BJA-2023-0059"
+          ],
+          "relevant": [
+            "BJA-2023-0128"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0128",
+            "BJA-2023-0097",
+            "BJA-2023-0129",
+            "BJA-2023-0106",
+            "BOP-2020-0046"
+          ],
+          "relevant": [
+            "BJA-2023-0128"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0128",
+            "BJA-2023-0129",
+            "BJA-2023-0097",
+            "BJA-2023-0057",
+            "BOP-2020-0010"
+          ],
+          "relevant": [
+            "BJA-2023-0128"
+          ]
+        }
+      },
+      {
+        "id": "G17",
+        "question": "Should individuals being treated with buprenorphine or methadone continue the medication while in jail?",
+        "dense": {
+          "recall_at_k": 0.0,
+          "precision_at_k": 0.0,
+          "rr": 0.0,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": null,
+          "retrieved": [
+            "BJA-2023-0104",
+            "BJA-2023-0120",
+            "BJA-2023-0107",
+            "BJA-2023-0118",
+            "BJA-2023-0032"
+          ],
+          "relevant": []
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0131",
+            "BJA-2023-0118",
+            "BJA-2023-0107",
+            "BJA-2023-0004",
+            "BJA-2023-0120"
+          ],
+          "relevant": [
+            "BJA-2023-0131"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 0.25,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 4,
+          "retrieved": [
+            "BJA-2023-0118",
+            "BJA-2023-0107",
+            "BJA-2023-0120",
+            "BJA-2023-0131",
+            "BJA-2023-0116"
+          ],
+          "relevant": [
+            "BJA-2023-0131"
+          ]
+        }
+      },
+      {
+        "id": "G18",
+        "question": "Should naloxone be available in housing units?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0042",
+            "BJA-2023-0132",
+            "BJA-2023-0035",
+            "BJA-2023-0059",
+            "BJA-2023-0045"
+          ],
+          "relevant": [
+            "BJA-2023-0042"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0042",
+            "BOP-2020-0011",
+            "BJA-2023-0132",
+            "BJA-2023-0022",
+            "BJA-2023-0040"
+          ],
+          "relevant": [
+            "BJA-2023-0042"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0042",
+            "BJA-2023-0132",
+            "BOP-2020-0011",
+            "BJA-2023-0035",
+            "BJA-2023-0059"
+          ],
+          "relevant": [
+            "BJA-2023-0042"
+          ]
+        }
+      },
+      {
+        "id": "G19",
+        "question": "Who may conduct withdrawal monitoring when health care staff are not available?",
+        "dense": {
+          "recall_at_k": 0.0,
+          "precision_at_k": 0.0,
+          "rr": 0.0,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": null,
+          "retrieved": [
+            "BJA-2023-0040",
+            "BJA-2023-0012",
+            "BJA-2023-0038",
+            "BJA-2023-0043",
+            "BJA-2023-0023"
+          ],
+          "relevant": []
+        },
+        "bm25": {
+          "recall_at_k": 0.5,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0019",
+            "BJA-2023-0044",
+            "BJA-2023-0038",
+            "BJA-2023-0014",
+            "BJA-2023-0040"
+          ],
+          "relevant": [
+            "BJA-2023-0019"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 0.5,
+          "precision_at_k": 0.2,
+          "rr": 0.3333333333333333,
+          "hit_at_1": 0.0,
+          "first_relevant_rank": 3,
+          "retrieved": [
+            "BJA-2023-0040",
+            "BJA-2023-0038",
+            "BJA-2023-0019",
+            "BJA-2023-0012",
+            "BJA-2023-0044"
+          ],
+          "relevant": [
+            "BJA-2023-0019"
+          ]
+        }
+      },
+      {
+        "id": "G20",
+        "question": "How should withdrawal medications be adjusted for older adults?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0062",
+            "BJA-2023-0061",
+            "BOP-2020-0009",
+            "BJA-2023-0001",
+            "BOP-2020-0006"
+          ],
+          "relevant": [
+            "BJA-2023-0062"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0062",
+            "BJA-2023-0061",
+            "BJA-2023-0153",
+            "BJA-2023-0160",
+            "BJA-2023-0111"
+          ],
+          "relevant": [
+            "BJA-2023-0062"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0062",
+            "BJA-2023-0061",
+            "BJA-2023-0001",
+            "BJA-2023-0153",
+            "BJA-2023-0020"
+          ],
+          "relevant": [
+            "BJA-2023-0062"
+          ]
+        }
+      },
+      {
+        "id": "G21",
+        "question": "Should patients experiencing withdrawal have access to water or electrolyte solution?",
+        "dense": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0049",
+            "BJA-2023-0047",
+            "BJA-2023-0048",
+            "BJA-2023-0012",
+            "BJA-2023-0001"
+          ],
+          "relevant": [
+            "BJA-2023-0049"
+          ]
+        },
+        "bm25": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0049",
+            "BJA-2023-0106",
+            "BJA-2023-0107",
+            "BJA-2023-0120",
+            "BJA-2023-0117"
+          ],
+          "relevant": [
+            "BJA-2023-0049"
+          ]
+        },
+        "hybrid": {
+          "recall_at_k": 1.0,
+          "precision_at_k": 0.2,
+          "rr": 1.0,
+          "hit_at_1": 1.0,
+          "first_relevant_rank": 1,
+          "retrieved": [
+            "BJA-2023-0049",
+            "BJA-2023-0047",
+            "BJA-2023-0048",
+            "BOP-2020-0019",
+            "BJA-2023-0080"
+          ],
+          "relevant": [
+            "BJA-2023-0049"
+          ]
+        }
+      }
+    ]
+  },
+  "analytics": {
+    "gap_detection": {
+      "injected_defects": 211,
+      "detected": 211,
+      "recall": 1.0,
+      "by_type": {
+        "dose_held": {
+          "expected": 10,
+          "detected": 10,
+          "recall": 1.0
+        },
+        "dose_not_administered": {
+          "expected": 10,
+          "detected": 10,
+          "recall": 1.0
+        },
+        "dose_refused": {
+          "expected": 10,
+          "detected": 10,
+          "recall": 1.0
+        },
+        "long_interval": {
+          "expected": 10,
+          "detected": 10,
+          "recall": 1.0
+        },
+        "note_contradicts_administration": {
+          "expected": 10,
+          "detected": 10,
+          "recall": 1.0
+        },
+        "note_contradicts_assessment": {
+          "expected": 10,
+          "detected": 10,
+          "recall": 1.0
+        },
+        "null_measurement": {
+          "expected": 40,
+          "detected": 40,
+          "recall": 1.0
+        },
+        "records_stop_early": {
+          "expected": 4,
+          "detected": 4,
+          "recall": 1.0
+        },
+        "undocumented_dose": {
+          "expected": 47,
+          "detected": 47,
+          "recall": 1.0
+        },
+        "unrecorded_assessment": {
+          "expected": 30,
+          "detected": 30,
+          "recall": 1.0
+        },
+        "unrecorded_vital_set": {
+          "expected": 30,
+          "detected": 30,
+          "recall": 1.0
+        }
+      },
+      "clean_bookings": 40,
+      "flags_on_clean_bookings": 0,
+      "spurious_conflicts": 0,
+      "missed": []
+    },
+    "temporal_accuracy": {
+      "n_checks": 2400,
+      "mismatches": 0,
+      "accuracy": 1.0,
+      "examples": []
+    }
+  },
+  "generation": {
+    "n_cases": 12,
+    "experiments": {
+      "A_structured_only": {
+        "label": "A \u00b7 Structured data only",
+        "retrieval_mode": "none",
+        "metrics": {
+          "citation_validity": 1.0,
+          "patient_fact_accuracy": 0.9706,
+          "patient_fact_coverage": 0.9444,
+          "contradiction_free_rate": 0.9167,
+          "unsupported_sentence_rate": 0.0532,
+          "gap_acknowledgement_rate": 1.0,
+          "guideline_evidence_success": null,
+          "guideline_citation_relevance": null,
+          "safety_removal_rate": 0.0,
+          "json_valid_rate": 1.0,
+          "mean_retrieval_ms": 2.7167,
+          "mean_generation_ms": 9352.6917,
+          "mean_total_ms": 9357.7667,
+          "mean_prompt_tokens": 3401.0833
+        }
+      },
+      "B_dense_rag": {
+        "label": "B \u00b7 + Dense RAG",
+        "retrieval_mode": "dense",
+        "metrics": {
+          "citation_validity": 0.9882,
+          "patient_fact_accuracy": 1.0,
+          "patient_fact_coverage": 0.9722,
+          "contradiction_free_rate": 1.0,
+          "unsupported_sentence_rate": 0.0729,
+          "gap_acknowledgement_rate": 1.0,
+          "guideline_evidence_success": 1.0,
+          "guideline_citation_relevance": 0.8462,
+          "safety_removal_rate": 0.0,
+          "json_valid_rate": 1.0,
+          "mean_retrieval_ms": 68.1,
+          "mean_generation_ms": 12779.0,
+          "mean_total_ms": 12849.45,
+          "mean_prompt_tokens": 4836.5833
+        }
+      },
+      "C_hybrid_rag": {
+        "label": "C \u00b7 + Hybrid RAG",
+        "retrieval_mode": "hybrid",
+        "metrics": {
+          "citation_validity": 1.0,
+          "patient_fact_accuracy": 0.9714,
+          "patient_fact_coverage": 0.9722,
+          "contradiction_free_rate": 0.9167,
+          "unsupported_sentence_rate": 0.0556,
+          "gap_acknowledgement_rate": 1.0,
+          "guideline_evidence_success": 1.0,
+          "guideline_citation_relevance": 0.7143,
+          "safety_removal_rate": 0.0,
+          "json_valid_rate": 1.0,
+          "mean_retrieval_ms": 64.0917,
+          "mean_generation_ms": 12675.2167,
+          "mean_total_ms": 12741.6667,
+          "mean_prompt_tokens": 4802.6667
+        }
+      }
+    },
+    "per_case": [
+      {
+        "case_id": "C01",
+        "experiment": "A_structured_only",
+        "patient_id": "P005",
+        "booking_number": "B1005",
+        "scenario": "increasing",
+        "question": "Summarize this patient's withdrawal progression over the last 12 hours and show the relevant clinical guidelines.",
+        "hours": 12,
+        "gold_facts": {
+          "n": 3,
+          "earliest": 20,
+          "latest": 23,
+          "change": 3
+        },
+        "stated_facts": {
+          "earliest": 20,
+          "latest": 23,
+          "change": 3
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 5,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 8,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 2.3,
+        "generation_ms": 7511.0,
+        "total_ms": 7522.1,
+        "prompt_tokens": 1986,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 20 to 23 over 12 hours [CALC-SCORE]. The patient was observed to be agitated, pacing, and reporting sweating and nausea with marked tremor [NOTE-0017].",
+          "assessment_trend": "The recorded score changed from 20 to 23 (+3 points) over 12 h [CALC-SCORE]. The score showed a steady increase with no significant fluctuations [ASM-00045].",
+          "vital_sign_observations": "Systolic BP increased from 127 to 128 mmHg (+1) [CALC-VITALS]. Diastolic BP decreased from 92 to 90 mmHg (-2) [CALC-VITALS]. Pulse increased from 85 to 96 beats/min (+11) [CALC-VITALS].",
+          "medication_documentation": "One scheduled dose of Fictional Med AW-1 was administered during the review window [CALC-MEDS].",
+          "guideline_context": "No relevant clinical guidelines were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 20 to 23 over 12 hours [CALC-SCORE]. The patient was observed to be agitated, pacing, and reporting sweating and nausea with marked tremor [NOTE-0017].",
+          "assessment_trend": "The recorded score changed from 20 to 23 (+3 points) over 12 h [CALC-SCORE]. The score showed a steady increase with no significant fluctuations [ASM-00045].",
+          "vital_sign_observations": "Systolic BP increased from 127 to 128 mmHg (+1) [CALC-VITALS]. Diastolic BP decreased from 92 to 90 mmHg (-2) [CALC-VITALS]. Pulse increased from 85 to 96 beats/min (+11) [CALC-VITALS].",
+          "medication_documentation": "One scheduled dose of Fictional Med AW-1 was administered during the review window [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C01",
+        "experiment": "B_dense_rag",
+        "patient_id": "P005",
+        "booking_number": "B1005",
+        "scenario": "increasing",
+        "question": "Summarize this patient's withdrawal progression over the last 12 hours and show the relevant clinical guidelines.",
+        "hours": 12,
+        "gold_facts": {
+          "n": 3,
+          "earliest": 20,
+          "latest": 23,
+          "change": 3
+        },
+        "stated_facts": {
+          "earliest": 20,
+          "latest": 23,
+          "change": 3
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 9,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 2,
+        "guideline_cited_relevant": 2,
+        "retrieval_ms": 172.8,
+        "generation_ms": 11787.6,
+        "total_ms": 11962.1,
+        "prompt_tokens": 3694,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 20 to 23 over 12 hours [CALC-SCORE]. The patient was observed to be agitated, pacing in cell, and reported sweating and nausea with marked tremor [NOTE-0017].",
+          "assessment_trend": "The recorded score changed from 20 to 23 (+3 points) over 12 hours [CALC-SCORE]. The score showed a consistent increase with no significant fluctuations [ASM-00045].",
+          "vital_sign_observations": "Systolic BP increased from 127 to 128 mmHg (+1), diastolic BP decreased from 92 to 90 mmHg (-2), pulse increased from 85 to 96 beats/min (+11), and respiratory rate increased from 19 to 21 breaths/min (+2) [CALC-VITALS]. Temperature and oxygen saturation remained stable [VIT-00044, VIT-00046].",
+          "medication_documentation": "One scheduled dose of Fictional Med AW-1 was administered during the review window [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0151]. If the score is \u2265 19, it should be repeated every 6 hours until it falls below 19 [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 20 to 23 over 12 hours [CALC-SCORE]. The patient was observed to be agitated, pacing in cell, and reported sweating and nausea with marked tremor [NOTE-0017].",
+          "assessment_trend": "The recorded score changed from 20 to 23 (+3 points) over 12 hours [CALC-SCORE]. The score showed a consistent increase with no significant fluctuations [ASM-00045].",
+          "vital_sign_observations": "Systolic BP increased from 127 to 128 mmHg (+1), diastolic BP decreased from 92 to 90 mmHg (-2), pulse increased from 85 to 96 beats/min (+11), and respiratory rate increased from 19 to 21 breaths/min (+2) [CALC-VITALS]. Temperature and oxygen saturation remained stable [VIT-00044, VIT-00046].",
+          "medication_documentation": "One scheduled dose of Fictional Med AW-1 was administered during the review window [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0151]. If the score is \u2265 19, it should be repeated every 6 hours until it falls below 19 [BJA-2023-0071]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C01",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P005",
+        "booking_number": "B1005",
+        "scenario": "increasing",
+        "question": "Summarize this patient's withdrawal progression over the last 12 hours and show the relevant clinical guidelines.",
+        "hours": 12,
+        "gold_facts": {
+          "n": 3,
+          "earliest": 20,
+          "latest": 23,
+          "change": 3
+        },
+        "stated_facts": {
+          "earliest": 20,
+          "latest": 23,
+          "change": 3
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 9,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 2,
+        "guideline_cited_relevant": 2,
+        "retrieval_ms": 68.7,
+        "generation_ms": 11776.3,
+        "total_ms": 11846.2,
+        "prompt_tokens": 3666,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 20 to 23 over 12 hours [CALC-SCORE]. The patient was observed to be agitated, pacing in cell, and reported sweating and nausea with marked tremor [NOTE-0017].",
+          "assessment_trend": "The recorded score changed from 20 to 23 (+3 points) over 12 h [CALC-SCORE]. The score showed a net increase of 3 points over the review window [ASM-00044].",
+          "vital_sign_observations": "Systolic BP increased from 127 to 128 mmHg (+1), diastolic BP decreased from 92 to 90 mmHg (-2), pulse increased from 85 to 96 beats/min (+11), and respiratory rate increased from 19 to 21 breaths/min (+2) [CALC-VITALS]. Temperature and oxygen saturation remained stable [VIT-00044, VIT-00046].",
+          "medication_documentation": "One scheduled dose of Fictional Med AW-1 was administered during the review window [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be monitored at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]. If the CIWA-Ar score is \u2265 19, it should be repeated at least every 6 hours until the score falls below 19 [BJA-2023-0151]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 20 to 23 over 12 hours [CALC-SCORE]. The patient was observed to be agitated, pacing in cell, and reported sweating and nausea with marked tremor [NOTE-0017].",
+          "assessment_trend": "The recorded score changed from 20 to 23 (+3 points) over 12 h [CALC-SCORE]. The score showed a net increase of 3 points over the review window [ASM-00044].",
+          "vital_sign_observations": "Systolic BP increased from 127 to 128 mmHg (+1), diastolic BP decreased from 92 to 90 mmHg (-2), pulse increased from 85 to 96 beats/min (+11), and respiratory rate increased from 19 to 21 breaths/min (+2) [CALC-VITALS]. Temperature and oxygen saturation remained stable [VIT-00044, VIT-00046].",
+          "medication_documentation": "One scheduled dose of Fictional Med AW-1 was administered during the review window [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be monitored at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]. If the CIWA-Ar score is \u2265 19, it should be repeated at least every 6 hours until the score falls below 19 [BJA-2023-0151]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C02",
+        "experiment": "A_structured_only",
+        "patient_id": "P006",
+        "booking_number": "B1006",
+        "scenario": "increasing",
+        "question": "How have the recorded COWS scores changed?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 8,
+          "latest": 19,
+          "change": 11
+        },
+        "stated_facts": {
+          "earliest": 8,
+          "latest": 19,
+          "change": 11
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 4,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 6,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 3.1,
+        "generation_ms": 7962.9,
+        "total_ms": 7966.5,
+        "prompt_tokens": 3674,
+        "raw_output": {
+          "patient_summary": "The COWS score increased from 8 to 19 over 45.1 hours [CALC-SCORE].",
+          "assessment_trend": "The recorded score changed from 8 to 19 (+11 points) over 45.1 hours [CALC-SCORE]. The score showed an overall increasing trend with multiple fluctuations [ASM-00058].",
+          "vital_sign_observations": "Systolic BP changed from 131 to 135 (+4) over 45.1 hours [CALC-VITALS]. Diastolic BP changed from 84 to 87 (+3) over 45.1 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were documented, all administered as per the orders [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The COWS score increased from 8 to 19 over 45.1 hours [CALC-SCORE].",
+          "assessment_trend": "The recorded score changed from 8 to 19 (+11 points) over 45.1 hours [CALC-SCORE]. The score showed an overall increasing trend with multiple fluctuations [ASM-00058].",
+          "vital_sign_observations": "Systolic BP changed from 131 to 135 (+4) over 45.1 hours [CALC-VITALS]. Diastolic BP changed from 84 to 87 (+3) over 45.1 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were documented, all administered as per the orders [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C02",
+        "experiment": "B_dense_rag",
+        "patient_id": "P006",
+        "booking_number": "B1006",
+        "scenario": "increasing",
+        "question": "How have the recorded COWS scores changed?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 8,
+          "latest": 19,
+          "change": 11
+        },
+        "stated_facts": {
+          "earliest": 8,
+          "latest": 19,
+          "change": 11
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 5,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": "opioid_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 39.2,
+        "generation_ms": 10421.2,
+        "total_ms": 10461.4,
+        "prompt_tokens": 4949,
+        "raw_output": {
+          "patient_summary": "The COWS score increased from 8 to 19 over 45.1 hours [CALC-SCORE]. The score fluctuated with a net increase [ASM-00047].",
+          "assessment_trend": "The recorded score changed from 8 to 19 (+11 points) over 45.1 hours [CALC-SCORE]. The score showed an overall increasing trend [ASM-00047].",
+          "vital_sign_observations": "Systolic BP increased from 131 to 135 (change +4) over 45.1 hours [CALC-VITALS]. Diastolic BP increased from 84 to 87 (change +3) over 45.1 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were documented, all administered [CALC-MEDS].",
+          "guideline_context": "The COWS should be used for monitoring opioid withdrawal, at least every 4 hours for short-acting opioids [BJA-2023-0152]."
+        },
+        "final_output": {
+          "patient_summary": "The COWS score increased from 8 to 19 over 45.1 hours [CALC-SCORE]. The score fluctuated with a net increase [ASM-00047].",
+          "assessment_trend": "The recorded score changed from 8 to 19 (+11 points) over 45.1 hours [CALC-SCORE]. The score showed an overall increasing trend [ASM-00047].",
+          "vital_sign_observations": "Systolic BP increased from 131 to 135 (change +4) over 45.1 hours [CALC-VITALS]. Diastolic BP increased from 84 to 87 (change +3) over 45.1 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were documented, all administered [CALC-MEDS].",
+          "guideline_context": "The COWS should be used for monitoring opioid withdrawal, at least every 4 hours for short-acting opioids [BJA-2023-0152]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C02",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P006",
+        "booking_number": "B1006",
+        "scenario": "increasing",
+        "question": "How have the recorded COWS scores changed?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 8,
+          "latest": 19,
+          "change": 11
+        },
+        "stated_facts": {
+          "earliest": 8,
+          "latest": 19,
+          "change": 11
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 5,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": "opioid_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 56.3,
+        "generation_ms": 10422.2,
+        "total_ms": 10479.9,
+        "prompt_tokens": 4760,
+        "raw_output": {
+          "patient_summary": "The COWS score increased from 8 to 19 over 45.1 hours [CALC-SCORE]. The score fluctuated with a net increase of 11 points [CALC-SCORE].",
+          "assessment_trend": "The recorded score changed from 8 to 19 (+11 points) over 45.1 hours [CALC-SCORE]. The score showed an increasing trend with multiple fluctuations [ASM-00058].",
+          "vital_sign_observations": "Systolic BP changed from 131 to 135 (+4 mmHg) over 45.1 hours [CALC-VITALS]. Diastolic BP changed from 84 to 87 (+3 mmHg) over 45.1 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were documented, all administered [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored using the COWS at least every 4 hours for the first 72 hours of incarceration [BJA-2023-0102]."
+        },
+        "final_output": {
+          "patient_summary": "The COWS score increased from 8 to 19 over 45.1 hours [CALC-SCORE]. The score fluctuated with a net increase of 11 points [CALC-SCORE].",
+          "assessment_trend": "The recorded score changed from 8 to 19 (+11 points) over 45.1 hours [CALC-SCORE]. The score showed an increasing trend with multiple fluctuations [ASM-00058].",
+          "vital_sign_observations": "Systolic BP changed from 131 to 135 (+4 mmHg) over 45.1 hours [CALC-VITALS]. Diastolic BP changed from 84 to 87 (+3 mmHg) over 45.1 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were documented, all administered [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored using the COWS at least every 4 hours for the first 72 hours of incarceration [BJA-2023-0102]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C03",
+        "experiment": "A_structured_only",
+        "patient_id": "P020",
+        "booking_number": "B1020",
+        "scenario": "decreasing",
+        "question": "How have the recorded CIWA-Ar scores changed?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 18,
+          "latest": 0,
+          "change": -18
+        },
+        "stated_facts": {
+          "earliest": 18,
+          "latest": 0,
+          "change": -18
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 5,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 9,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 3.0,
+        "generation_ms": 9183.7,
+        "total_ms": 9188.0,
+        "prompt_tokens": 3694,
+        "raw_output": {
+          "patient_summary": "The CIWA-Ar score decreased from 18 to 0 over the monitoring period [CALC-SCORE]. The lowest score was 0 [ASM-00212].",
+          "assessment_trend": "The recorded score changed from 18 to 0 (-18 points) over 44.05 h [CALC-SCORE]. The score showed a consistent decrease throughout the monitoring period [ASM-00201].",
+          "vital_sign_observations": "Systolic BP changed from 141 to 121 mmHg (-20 points) [CALC-VITALS]. Diastolic BP changed from 76 to 73 mmHg (-3 points) [CALC-VITALS]. Pulse changed from 96 to 83 beats/min (-13 points) [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 was administered 8 times, and Fictional Supplement S-1 was administered 2 times [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The CIWA-Ar score decreased from 18 to 0 over the monitoring period [CALC-SCORE]. The lowest score was 0 [ASM-00212].",
+          "assessment_trend": "The recorded score changed from 18 to 0 (-18 points) over 44.05 h [CALC-SCORE]. The score showed a consistent decrease throughout the monitoring period [ASM-00201].",
+          "vital_sign_observations": "Systolic BP changed from 141 to 121 mmHg (-20 points) [CALC-VITALS]. Diastolic BP changed from 76 to 73 mmHg (-3 points) [CALC-VITALS]. Pulse changed from 96 to 83 beats/min (-13 points) [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 was administered 8 times, and Fictional Supplement S-1 was administered 2 times [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": [
+          "1 of 9 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C03",
+        "experiment": "B_dense_rag",
+        "patient_id": "P020",
+        "booking_number": "B1020",
+        "scenario": "decreasing",
+        "question": "How have the recorded CIWA-Ar scores changed?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 18,
+          "latest": 0,
+          "change": -18
+        },
+        "stated_facts": {
+          "earliest": 18,
+          "latest": 0,
+          "change": -18
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 6,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 8,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 55.2,
+        "generation_ms": 12909.7,
+        "total_ms": 12967.2,
+        "prompt_tokens": 5402,
+        "raw_output": {
+          "patient_summary": "The CIWA-Ar score decreased from 18 to 0 over 45.65 hours [CALC-SCORE]. The lowest score was 0 [ASM-00212], and the highest was 18 [ASM-00201].",
+          "assessment_trend": "The recorded score changed from 18 to 0 (a decrease of 18 points) over 45.65 hours [CALC-SCORE]. The score showed a consistent decrease trend [ASM-00201].",
+          "vital_sign_observations": "Systolic BP changed from 141 to 121 (a decrease of 20) over 45.65 hours [CALC-VITALS]. Diastolic BP changed from 76 to 73 (a decrease of 3) over 45.65 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 was administered 8 times, and Fictional Supplement S-1 was administered 2 times [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar scale is the most sensitive tool for assessing alcohol withdrawal. It should be used to document vitals and scores every 8 hours until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The CIWA-Ar score decreased from 18 to 0 over 45.65 hours [CALC-SCORE]. The lowest score was 0 [ASM-00212], and the highest was 18 [ASM-00201].",
+          "assessment_trend": "The recorded score changed from 18 to 0 (a decrease of 18 points) over 45.65 hours [CALC-SCORE]. The score showed a consistent decrease trend [ASM-00201].",
+          "vital_sign_observations": "Systolic BP changed from 141 to 121 (a decrease of 20) over 45.65 hours [CALC-VITALS]. Diastolic BP changed from 76 to 73 (a decrease of 3) over 45.65 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 was administered 8 times, and Fictional Supplement S-1 was administered 2 times [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar scale is the most sensitive tool for assessing alcohol withdrawal. It should be used to document vitals and scores every 8 hours until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "warnings": [
+          "1 of 8 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C03",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P020",
+        "booking_number": "B1020",
+        "scenario": "decreasing",
+        "question": "How have the recorded CIWA-Ar scores changed?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 18,
+          "latest": 0,
+          "change": -18
+        },
+        "stated_facts": {
+          "earliest": 18,
+          "latest": 0,
+          "change": -18
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 5,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 8,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 68.5,
+        "generation_ms": 12671.3,
+        "total_ms": 12742.4,
+        "prompt_tokens": 5402,
+        "raw_output": {
+          "patient_summary": "The CIWA-Ar score decreased from 18 to 0 over 45.65 hours [CALC-SCORE]. The score showed a net decrease of 18 points [CALC-SCORE].",
+          "assessment_trend": "The recorded score changed from 18 to 0 (a decrease of 18 points) over 45.65 hours [CALC-SCORE]. The score showed a consistent decrease trend [ASM-00201].",
+          "vital_sign_observations": "Systolic BP changed from 141 to 121 (a decrease of 20) over 45.65 hours [CALC-VITALS]. Diastolic BP changed from 76 to 73 (a decrease of 3) over 45.65 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 was administered 8 times, and Fictional Supplement S-1 was administered 2 times [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar scale is the most sensitive tool for assessing alcohol withdrawal. It should be used to document vitals and scores, and reassessed at least every 8 hours until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The CIWA-Ar score decreased from 18 to 0 over 45.65 hours [CALC-SCORE]. The score showed a net decrease of 18 points [CALC-SCORE].",
+          "assessment_trend": "The recorded score changed from 18 to 0 (a decrease of 18 points) over 45.65 hours [CALC-SCORE]. The score showed a consistent decrease trend [ASM-00201].",
+          "vital_sign_observations": "Systolic BP changed from 141 to 121 (a decrease of 20) over 45.65 hours [CALC-VITALS]. Diastolic BP changed from 76 to 73 (a decrease of 3) over 45.65 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 was administered 8 times, and Fictional Supplement S-1 was administered 2 times [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar scale is the most sensitive tool for assessing alcohol withdrawal. It should be used to document vitals and scores, and reassessed at least every 8 hours until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "warnings": [
+          "1 of 8 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C04",
+        "experiment": "A_structured_only",
+        "patient_id": "P007",
+        "booking_number": "B1007",
+        "scenario": "fluctuating",
+        "question": "Summarize this patient's withdrawal progression over the last 24 hours.",
+        "hours": 24,
+        "gold_facts": {
+          "n": 6,
+          "earliest": 13,
+          "latest": 11,
+          "change": -2
+        },
+        "stated_facts": {
+          "earliest": 13,
+          "latest": 11,
+          "change": -2
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 7,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 1.8,
+        "generation_ms": 7884.2,
+        "total_ms": 7888.0,
+        "prompt_tokens": 2619,
+        "raw_output": {
+          "patient_summary": "The patient's COWS score decreased from 13 to 11 over 24 hours [CALC-SCORE]. The patient reported symptoms like vomiting, muscle aches, and restlessness, with some vital signs showing fluctuations [NOTE-0022, NOTE-0023].",
+          "assessment_trend": "The recorded score changed from 13 to 11 (-2 points) over 20.28 h [CALC-SCORE]. The score showed a decreasing trend with some fluctuations [ASM-00065, ASM-00070].",
+          "vital_sign_observations": "Systolic BP changed from 139 to 130 mmHg (-9) over 24 h [CALC-VITALS]. Diastolic BP increased from 82 to 85 mmHg (+3) [CALC-VITALS].",
+          "medication_documentation": "4 doses of Fictional Med OW-1 and 1 dose of Fictional Supplement S-1 were documented as administered [CALC-MEDS].",
+          "guideline_context": "No relevant guidelines were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The patient's COWS score decreased from 13 to 11 over 24 hours [CALC-SCORE]. The patient reported symptoms like vomiting, muscle aches, and restlessness, with some vital signs showing fluctuations [NOTE-0022, NOTE-0023].",
+          "assessment_trend": "The recorded score changed from 13 to 11 (-2 points) over 20.28 h [CALC-SCORE]. The score showed a decreasing trend with some fluctuations [ASM-00065, ASM-00070].",
+          "vital_sign_observations": "Systolic BP changed from 139 to 130 mmHg (-9) over 24 h [CALC-VITALS]. Diastolic BP increased from 82 to 85 mmHg (+3) [CALC-VITALS].",
+          "medication_documentation": "4 doses of Fictional Med OW-1 and 1 dose of Fictional Supplement S-1 were documented as administered [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C04",
+        "experiment": "B_dense_rag",
+        "patient_id": "P007",
+        "booking_number": "B1007",
+        "scenario": "fluctuating",
+        "question": "Summarize this patient's withdrawal progression over the last 24 hours.",
+        "hours": 24,
+        "gold_facts": {
+          "n": 6,
+          "earliest": 13,
+          "latest": 11,
+          "change": -2
+        },
+        "stated_facts": {
+          "earliest": 13,
+          "latest": 11,
+          "change": -2
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 6,
+        "invalid_citations": 1,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": "opioid_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 58.8,
+        "generation_ms": 8869.3,
+        "total_ms": 8930.3,
+        "prompt_tokens": 3724,
+        "raw_output": {
+          "patient_summary": "The patient's COWS score decreased from 13 to 11 over 24 hours [CALC-SCORE]. A documentation gap exists regarding the release status [GAP-01].",
+          "assessment_trend": "The recorded score changed from 13 to 11 (-2 points) over 20.28 h [CALC-SCORE]. The score showed a net decreasing trend with fluctuations [ASM-00065].",
+          "vital_sign_observations": "Systolic BP changed from 139 to 130 mmHg (-9) over 24 h [CALC-VITALS]. Diastolic BP, pulse, and temperature showed minor changes [VIT-00065].",
+          "medication_documentation": "4 scheduled doses were administered, with 4 documented as administered [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours for the first 72 hours [BJA-2023-0102]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's COWS score decreased from 13 to 11 over 24 hours [CALC-SCORE]. A documentation gap exists regarding the release status [unsupported citation removed].",
+          "assessment_trend": "The recorded score changed from 13 to 11 (-2 points) over 20.28 h [CALC-SCORE]. The score showed a net decreasing trend with fluctuations [ASM-00065].",
+          "vital_sign_observations": "Systolic BP changed from 139 to 130 mmHg (-9) over 24 h [CALC-VITALS]. Diastolic BP, pulse, and temperature showed minor changes [VIT-00065].",
+          "medication_documentation": "4 scheduled doses were administered, with 4 documented as administered [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours for the first 72 hours [BJA-2023-0102]."
+        },
+        "warnings": [
+          "Removed citation(s) not present in the supplied evidence: GAP-01",
+          "1 of 7 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C04",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P007",
+        "booking_number": "B1007",
+        "scenario": "fluctuating",
+        "question": "Summarize this patient's withdrawal progression over the last 24 hours.",
+        "hours": 24,
+        "gold_facts": {
+          "n": 6,
+          "earliest": 13,
+          "latest": 11,
+          "change": -2
+        },
+        "stated_facts": {
+          "earliest": 13,
+          "latest": 11,
+          "change": -2
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 6,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": "opioid_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 58.4,
+        "generation_ms": 9822.5,
+        "total_ms": 9883.1,
+        "prompt_tokens": 3788,
+        "raw_output": {
+          "patient_summary": "The patient's COWS score decreased from 13 to 11 over 24 hours [CALC-SCORE]. The patient reported symptoms like vomiting, muscle aches, and restlessness, with some vital signs showing fluctuations [NOTE-0022].",
+          "assessment_trend": "The recorded score changed from 13 to 11 (-2 points) over 20.28 h [CALC-SCORE]. The score showed a general decreasing trend with some fluctuations [ASM-00065].",
+          "vital_sign_observations": "Systolic BP changed from 139 to 130 (-9 mmHg) over 24 h [CALC-VITALS]. Diastolic BP increased from 82 to 85 (+3 mmHg) [CALC-VITALS].",
+          "medication_documentation": "4 scheduled doses of Fictional Med OW-1 and 1 scheduled dose of Fictional Supplement S-1 were documented [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal patients should be monitored using the COWS at least every 4 hours for short-acting opioids [BJA-2023-0125]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's COWS score decreased from 13 to 11 over 24 hours [CALC-SCORE]. The patient reported symptoms like vomiting, muscle aches, and restlessness, with some vital signs showing fluctuations [NOTE-0022].",
+          "assessment_trend": "The recorded score changed from 13 to 11 (-2 points) over 20.28 h [CALC-SCORE]. The score showed a general decreasing trend with some fluctuations [ASM-00065].",
+          "vital_sign_observations": "Systolic BP changed from 139 to 130 (-9 mmHg) over 24 h [CALC-VITALS]. Diastolic BP increased from 82 to 85 (+3 mmHg) [CALC-VITALS].",
+          "medication_documentation": "4 scheduled doses of Fictional Med OW-1 and 1 scheduled dose of Fictional Supplement S-1 were documented [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal patients should be monitored using the COWS at least every 4 hours for short-acting opioids [BJA-2023-0125]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C05",
+        "experiment": "A_structured_only",
+        "patient_id": "P024",
+        "booking_number": "B1024",
+        "scenario": "stable",
+        "question": "What vital-sign measurements are documented, and what do the guidelines say about monitoring?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 7,
+          "latest": 5,
+          "change": -2
+        },
+        "stated_facts": {
+          "earliest": 8,
+          "latest": 5
+        },
+        "facts_correct": 1,
+        "facts_stated": 2,
+        "facts_total": 3,
+        "valid_citations": 4,
+        "invalid_citations": 0,
+        "fact_check_failures": 1,
+        "fact_check_detail": [
+          {
+            "section": "assessment_trend",
+            "claim": "score_range",
+            "stated": "8\u21925",
+            "expected": "7\u21925",
+            "sentence": "The CIWA-Ar score decreased from 8 to 5 over 45.4 hours [CALC-SCORE]."
+          }
+        ],
+        "sentences": 5,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 3.5,
+        "generation_ms": 8958.6,
+        "total_ms": 8964.6,
+        "prompt_tokens": 3698,
+        "raw_output": {
+          "patient_summary": "The patient's vital signs were recorded 12 times during the monitoring period, showing a consistent trend with slight variations [CALC-VITALS].",
+          "assessment_trend": "The CIWA-Ar score decreased from 8 to 5 over 45.4 hours [CALC-SCORE]. The score showed a net decrease with fluctuations [ASM-00251].",
+          "vital_sign_observations": "Systolic BP decreased from 131 to 121 mmHg, diastolic BP decreased from 82 to 77 mmHg, pulse increased from 75 to 77 beats/min, temperature decreased from 98.7 to 98.5 \u00b0F, and respiratory rate decreased from 16 to 14 breaths/min [CALC-VITALS].",
+          "medication_documentation": "Eight scheduled doses of Fictional Med AW-1 and two scheduled doses of Fictional Supplement S-1 were documented as administered [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The patient's vital signs were recorded 12 times during the monitoring period, showing a consistent trend with slight variations [CALC-VITALS].",
+          "assessment_trend": "Computed: 12 CIWA-Ar assessments are recorded; the score changed from 7 to 5 (-2 points) between 2026-03-20 03:38 and 2026-03-21 23:40 [CALC-SCORE]. The score showed a net decrease with fluctuations [ASM-00251].",
+          "vital_sign_observations": "Systolic BP decreased from 131 to 121 mmHg, diastolic BP decreased from 82 to 77 mmHg, pulse increased from 75 to 77 beats/min, temperature decreased from 98.7 to 98.5 \u00b0F, and respiratory rate decreased from 16 to 14 breaths/min [CALC-VITALS].",
+          "medication_documentation": "Eight scheduled doses of Fictional Med AW-1 and two scheduled doses of Fictional Supplement S-1 were documented as administered [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": [
+          "Replaced 1 model claim(s) contradicted by the computed analytics: score_range stated 8\u21925, record shows 7\u21925"
+        ]
+      },
+      {
+        "case_id": "C05",
+        "experiment": "B_dense_rag",
+        "patient_id": "P024",
+        "booking_number": "B1024",
+        "scenario": "stable",
+        "question": "What vital-sign measurements are documented, and what do the guidelines say about monitoring?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 7,
+          "latest": 5,
+          "change": -2
+        },
+        "stated_facts": {
+          "earliest": 7,
+          "latest": 5
+        },
+        "facts_correct": 2,
+        "facts_stated": 2,
+        "facts_total": 3,
+        "valid_citations": 5,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 5,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 60.5,
+        "generation_ms": 15023.0,
+        "total_ms": 15086.3,
+        "prompt_tokens": 5406,
+        "raw_output": {
+          "patient_summary": "The patient's vital signs were recorded 12 times during the monitoring period, with systolic BP ranging from 115\u2013134 mmHg, diastolic BP from 69\u201383 mmHg, pulse from 69\u201386 beats/min, temperature from 98.2\u201399.1 \u00b0F, respiratory rate from 14\u201317 breaths/min, and oxygen saturation from 97\u2013100% [CALC-VITALS].",
+          "assessment_trend": "The recorded CIWA-Ar score changed from 7 to 5 over 45.4 hours, with a net decrease [CALC-SCORE]. The score fluctuated with periods of increase and decrease, indicating variable withdrawal severity [ASM-00251].",
+          "vital_sign_observations": "Systolic BP decreased from 131 to 121 mmHg, diastolic BP decreased from 82 to 77 mmHg, pulse increased from 75 to 77 beats/min, temperature decreased from 98.7 to 98.5 \u00b0F, respiratory rate decreased from 16 to 14 breaths/min, and oxygen saturation increased from 97% to 98% [CALC-VITALS].",
+          "medication_documentation": "Eight scheduled doses were documented, with all medications administered as scheduled [CALC-MEDS].",
+          "guideline_context": "Guidelines recommend using the CIWA-Ar scale for monitoring alcohol withdrawal, with assessments every 8 hours until the score remains below 10 for 24 hours. If the score is \u226519, assessments should be every 6 hours until the score falls below 19 [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's vital signs were recorded 12 times during the monitoring period, with systolic BP ranging from 115\u2013134 mmHg, diastolic BP from 69\u201383 mmHg, pulse from 69\u201386 beats/min, temperature from 98.2\u201399.1 \u00b0F, respiratory rate from 14\u201317 breaths/min, and oxygen saturation from 97\u2013100% [CALC-VITALS].",
+          "assessment_trend": "The recorded CIWA-Ar score changed from 7 to 5 over 45.4 hours, with a net decrease [CALC-SCORE]. The score fluctuated with periods of increase and decrease, indicating variable withdrawal severity [ASM-00251].",
+          "vital_sign_observations": "Systolic BP decreased from 131 to 121 mmHg, diastolic BP decreased from 82 to 77 mmHg, pulse increased from 75 to 77 beats/min, temperature decreased from 98.7 to 98.5 \u00b0F, respiratory rate decreased from 16 to 14 breaths/min, and oxygen saturation increased from 97% to 98% [CALC-VITALS].",
+          "medication_documentation": "Eight scheduled doses were documented, with all medications administered as scheduled [CALC-MEDS].",
+          "guideline_context": "Guidelines recommend using the CIWA-Ar scale for monitoring alcohol withdrawal, with assessments every 8 hours until the score remains below 10 for 24 hours. If the score is \u226519, assessments should be every 6 hours until the score falls below 19 [BJA-2023-0071]."
+        },
+        "warnings": [
+          "Interpretive wording to verify: assessment_trend: The score fluctuated with periods of increase and decrease, indicating variable withdrawal severity [ASM-00251]."
+        ]
+      },
+      {
+        "case_id": "C05",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P024",
+        "booking_number": "B1024",
+        "scenario": "stable",
+        "question": "What vital-sign measurements are documented, and what do the guidelines say about monitoring?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 7,
+          "latest": 5,
+          "change": -2
+        },
+        "stated_facts": {
+          "earliest": 8,
+          "latest": 5
+        },
+        "facts_correct": 1,
+        "facts_stated": 2,
+        "facts_total": 3,
+        "valid_citations": 5,
+        "invalid_citations": 0,
+        "fact_check_failures": 1,
+        "fact_check_detail": [
+          {
+            "section": "assessment_trend",
+            "claim": "score_range",
+            "stated": "8\u21925",
+            "expected": "7\u21925",
+            "sentence": "The CIWA-Ar score decreased from 8 to 5 over 45.4 hours [CALC-SCORE]."
+          }
+        ],
+        "sentences": 6,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": false,
+        "gap_acknowledged": null,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 60.2,
+        "generation_ms": 14831.3,
+        "total_ms": 14894.1,
+        "prompt_tokens": 5345,
+        "raw_output": {
+          "patient_summary": "The patient's vital signs were recorded 12 times during the monitoring period, with systolic BP ranging from 115\u2013134 mmHg, diastolic BP from 69\u201383 mmHg, pulse from 69\u201386 beats/min, temperature from 98.2\u201399.1 \u00b0F, respiratory rate from 14\u201317 breaths/min, and oxygen saturation from 97\u2013100% [CALC-VITALS].",
+          "assessment_trend": "The CIWA-Ar score decreased from 8 to 5 over 45.4 hours [CALC-SCORE]. The score showed a net decrease with fluctuations [ASM-00251].",
+          "vital_sign_observations": "Systolic BP changed from 131 to 121 mmHg, diastolic BP from 82 to 77 mmHg, pulse from 75 to 77 beats/min, temperature from 98.7 to 98.5 \u00b0F, respiratory rate from 16 to 14 breaths/min, and oxygen saturation from 97 to 98% [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were documented, with 8 administered. Fictional Med AW-1 and Fictional Supplement S-1 were ordered and completed [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar score should be assessed at least every 8 hours until it remains below 10 for 24 hours, and if the score is \u226519, it should be reassessed every 6 hours until it falls below 19 [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's vital signs were recorded 12 times during the monitoring period, with systolic BP ranging from 115\u2013134 mmHg, diastolic BP from 69\u201383 mmHg, pulse from 69\u201386 beats/min, temperature from 98.2\u201399.1 \u00b0F, respiratory rate from 14\u201317 breaths/min, and oxygen saturation from 97\u2013100% [CALC-VITALS].",
+          "assessment_trend": "Computed: 12 CIWA-Ar assessments are recorded; the score changed from 7 to 5 (-2 points) between 2026-03-20 03:38 and 2026-03-21 23:40 [CALC-SCORE]. The score showed a net decrease with fluctuations [ASM-00251].",
+          "vital_sign_observations": "Systolic BP changed from 131 to 121 mmHg, diastolic BP from 82 to 77 mmHg, pulse from 75 to 77 beats/min, temperature from 98.7 to 98.5 \u00b0F, respiratory rate from 16 to 14 breaths/min, and oxygen saturation from 97 to 98% [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were documented, with 8 administered. Fictional Med AW-1 and Fictional Supplement S-1 were ordered and completed [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar score should be assessed at least every 8 hours until it remains below 10 for 24 hours, and if the score is \u226519, it should be reassessed every 6 hours until it falls below 19 [BJA-2023-0071]."
+        },
+        "warnings": [
+          "1 of 6 patient-record sentence(s) have no citation.",
+          "Replaced 1 model claim(s) contradicted by the computed analytics: score_range stated 8\u21925, record shows 7\u21925"
+        ]
+      },
+      {
+        "case_id": "C06",
+        "experiment": "A_structured_only",
+        "patient_id": "P032",
+        "booking_number": "B1032",
+        "scenario": "missing_assessments",
+        "question": "What information is missing from the retrieved record?",
+        "hours": null,
+        "gold_facts": {
+          "n": 9,
+          "earliest": 15,
+          "latest": 3,
+          "change": -12
+        },
+        "stated_facts": {
+          "earliest": 15,
+          "latest": 3
+        },
+        "facts_correct": 2,
+        "facts_stated": 2,
+        "facts_total": 3,
+        "valid_citations": 6,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 8,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 2.8,
+        "generation_ms": 9633.4,
+        "total_ms": 9638.6,
+        "prompt_tokens": 3856,
+        "raw_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring with a COWS score of 15 at admission, which decreased to 3 by release [CALC-SCORE]. There are gaps in the recorded assessments and vital signs [GAP-01].",
+          "assessment_trend": "The COWS score decreased from 15 to 3 over 44.12 hours [CALC-SCORE]. The score showed a net decrease with several intervals exceeding the review flag [ASM-00314].",
+          "vital_sign_observations": "Systolic BP decreased from 142 to 114 mmHg, diastolic BP from 82 to 76 mmHg, and pulse from 91 to 76 beats/min [CALC-VITALS]. Some vital signs were not recorded within 30 minutes of assessments [GAP-02].",
+          "medication_documentation": "8 scheduled doses were documented, with 8 administered. Medications include Fictional Med OW-1 and Fictional Supplement S-1 [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring with a COWS score of 15 at admission, which decreased to 3 by release [CALC-SCORE]. There are gaps in the recorded assessments and vital signs [GAP-01].",
+          "assessment_trend": "The COWS score decreased from 15 to 3 over 44.12 hours [CALC-SCORE]. The score showed a net decrease with several intervals exceeding the review flag [ASM-00314].",
+          "vital_sign_observations": "Systolic BP decreased from 142 to 114 mmHg, diastolic BP from 82 to 76 mmHg, and pulse from 91 to 76 beats/min [CALC-VITALS]. Some vital signs were not recorded within 30 minutes of assessments [GAP-02].",
+          "medication_documentation": "8 scheduled doses were documented, with 8 administered. Medications include Fictional Med OW-1 and Fictional Supplement S-1 [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": [
+          "1 of 8 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C06",
+        "experiment": "B_dense_rag",
+        "patient_id": "P032",
+        "booking_number": "B1032",
+        "scenario": "missing_assessments",
+        "question": "What information is missing from the retrieved record?",
+        "hours": null,
+        "gold_facts": {
+          "n": 9,
+          "earliest": 15,
+          "latest": 3,
+          "change": -12
+        },
+        "stated_facts": {
+          "earliest": 15,
+          "latest": 3,
+          "change": -12
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 7,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "opioid_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 70.7,
+        "generation_ms": 10715.2,
+        "total_ms": 10788.3,
+        "prompt_tokens": 4961,
+        "raw_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring and showed a gradual decrease in COWS score from 15 to 3 over 45.37 hours [CALC-SCORE]. There are gaps in the recorded assessments and vital signs [GAP-01].",
+          "assessment_trend": "The recorded score changed from 15 to 3 (-12 points) over 45.37 hours [CALC-SCORE]. The score decreased consistently [ASM-00314].",
+          "vital_sign_observations": "Systolic BP changed from 142 to 114 mmHg (-28) over 45.37 hours [CALC-VITALS]. Vital signs were not recorded within 30 minutes of some assessments [GAP-02].",
+          "medication_documentation": "8 scheduled doses were documented, all administered [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours using a validated tool like the COWS [BJA-2023-0152]."
+        },
+        "final_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring and showed a gradual decrease in COWS score from 15 to 3 over 45.37 hours [CALC-SCORE]. There are gaps in the recorded assessments and vital signs [GAP-01].",
+          "assessment_trend": "The recorded score changed from 15 to 3 (-12 points) over 45.37 hours [CALC-SCORE]. The score decreased consistently [ASM-00314].",
+          "vital_sign_observations": "Systolic BP changed from 142 to 114 mmHg (-28) over 45.37 hours [CALC-VITALS]. Vital signs were not recorded within 30 minutes of some assessments [GAP-02].",
+          "medication_documentation": "8 scheduled doses were documented, all administered [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours using a validated tool like the COWS [BJA-2023-0152]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C06",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P032",
+        "booking_number": "B1032",
+        "scenario": "missing_assessments",
+        "question": "What information is missing from the retrieved record?",
+        "hours": null,
+        "gold_facts": {
+          "n": 9,
+          "earliest": 15,
+          "latest": 3,
+          "change": -12
+        },
+        "stated_facts": {
+          "earliest": 15,
+          "latest": 3,
+          "change": -12
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 7,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "opioid_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 58.8,
+        "generation_ms": 10829.3,
+        "total_ms": 10890.7,
+        "prompt_tokens": 4950,
+        "raw_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring and had a COWS score of 15 at admission, which decreased to 3 by release [CALC-SCORE]. There are gaps in the recorded assessments and vital signs [GAP-01].",
+          "assessment_trend": "The recorded COWS score changed from 15 to 3 over 44.12 h (-12 points) [CALC-SCORE]. The score showed a decreasing trend [ASM-00314].",
+          "vital_sign_observations": "Systolic BP changed from 142 to 114 mmHg over 44.12 h (-28 mmHg) [CALC-VITALS]. Vital signs were not recorded within 30 minutes of some assessments [GAP-02].",
+          "medication_documentation": "8 scheduled doses were documented, with 8 administered [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours for the first 72 hours [BJA-2023-0102]."
+        },
+        "final_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring and had a COWS score of 15 at admission, which decreased to 3 by release [CALC-SCORE]. There are gaps in the recorded assessments and vital signs [GAP-01].",
+          "assessment_trend": "The recorded COWS score changed from 15 to 3 over 44.12 h (-12 points) [CALC-SCORE]. The score showed a decreasing trend [ASM-00314].",
+          "vital_sign_observations": "Systolic BP changed from 142 to 114 mmHg over 44.12 h (-28 mmHg) [CALC-VITALS]. Vital signs were not recorded within 30 minutes of some assessments [GAP-02].",
+          "medication_documentation": "8 scheduled doses were documented, with 8 administered [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours for the first 72 hours [BJA-2023-0102]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C07",
+        "experiment": "A_structured_only",
+        "patient_id": "P040",
+        "booking_number": "B1040",
+        "scenario": "missing_vitals",
+        "question": "What information is missing from the retrieved record?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 13,
+          "latest": 6,
+          "change": -7
+        },
+        "stated_facts": {
+          "earliest": 13,
+          "latest": 6,
+          "change": -7
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 8,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 8,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 3.0,
+        "generation_ms": 9246.1,
+        "total_ms": 9249.7,
+        "prompt_tokens": 3804,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 13 to 6 over 45.45 hours [CALC-SCORE]. Vital signs had missing data in several sets [GAP-01, GAP-03, GAP-05, GAP-07].",
+          "assessment_trend": "The recorded score changed from 13 to 6 (-7 points) over 45.45 hours [CALC-SCORE]. The score showed a net decreasing trend [ASM-00401].",
+          "vital_sign_observations": "Systolic BP changed from 148 to 135 (-13) over 45.45 hours [CALC-VITALS]. Temperature was not recorded in 3 sets [GAP-01, GAP-05, GAP-07].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 and S-1 were completed [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 13 to 6 over 45.45 hours [CALC-SCORE]. Vital signs had missing data in several sets [GAP-01, GAP-03, GAP-05, GAP-07].",
+          "assessment_trend": "The recorded score changed from 13 to 6 (-7 points) over 45.45 hours [CALC-SCORE]. The score showed a net decreasing trend [ASM-00401].",
+          "vital_sign_observations": "Systolic BP changed from 148 to 135 (-13) over 45.45 hours [CALC-VITALS]. Temperature was not recorded in 3 sets [GAP-01, GAP-05, GAP-07].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 and S-1 were completed [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": [
+          "1 of 8 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C07",
+        "experiment": "B_dense_rag",
+        "patient_id": "P040",
+        "booking_number": "B1040",
+        "scenario": "missing_vitals",
+        "question": "What information is missing from the retrieved record?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 13,
+          "latest": 6,
+          "change": -7
+        },
+        "stated_facts": {
+          "earliest": 13,
+          "latest": 6,
+          "change": -7
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 9,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 10,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 39.5,
+        "generation_ms": 13863.2,
+        "total_ms": 13905.2,
+        "prompt_tokens": 5512,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 13 to 6 over 45.45 hours [CALC-SCORE]. Vital signs were not recorded in several sets [GAP-01, GAP-03, GAP-05, GAP-07].",
+          "assessment_trend": "The recorded score changed from 13 to 6 (-7 points) over 45.45 hours [CALC-SCORE]. The score showed a net decreasing trend with fluctuations [ASM-00401].",
+          "vital_sign_observations": "Systolic BP changed from 148 to 135 (-13) over 45.45 hours [CALC-VITALS]. Diastolic BP changed from 75 to 79 (+4) over 45.45 hours [CALC-VITALS]. Temperature was not recorded in 2 sets [GAP-01, GAP-05]. Oxygen saturation was not recorded in 1 set [GAP-03].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 was administered 8 times, and Fictional Supplement S-1 was administered 2 times [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 13 to 6 over 45.45 hours [CALC-SCORE]. Vital signs were not recorded in several sets [GAP-01, GAP-03, GAP-05, GAP-07].",
+          "assessment_trend": "The recorded score changed from 13 to 6 (-7 points) over 45.45 hours [CALC-SCORE]. The score showed a net decreasing trend with fluctuations [ASM-00401].",
+          "vital_sign_observations": "Systolic BP changed from 148 to 135 (-13) over 45.45 hours [CALC-VITALS]. Diastolic BP changed from 75 to 79 (+4) over 45.45 hours [CALC-VITALS]. Temperature was not recorded in 2 sets [GAP-01, GAP-05]. Oxygen saturation was not recorded in 1 set [GAP-03].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 was administered 8 times, and Fictional Supplement S-1 was administered 2 times [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "warnings": [
+          "1 of 10 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C07",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P040",
+        "booking_number": "B1040",
+        "scenario": "missing_vitals",
+        "question": "What information is missing from the retrieved record?",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 13,
+          "latest": 6,
+          "change": -7
+        },
+        "stated_facts": {
+          "earliest": 13,
+          "latest": 6,
+          "change": -7
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 9,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 9,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 59.3,
+        "generation_ms": 13626.6,
+        "total_ms": 13688.6,
+        "prompt_tokens": 5405,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 13 to 6 over 45.45 hours [CALC-SCORE]. Vital signs were not recorded in several sets [GAP-01, GAP-03, GAP-05, GAP-07].",
+          "assessment_trend": "The recorded score changed from 13 to 6 (-7 points) over 45.45 hours [CALC-SCORE]. The score showed a net decreasing trend [ASM-00401].",
+          "vital_sign_observations": "Systolic BP changed from 148 to 135 (-13) over 45.45 hours [CALC-VITALS]. Diastolic BP changed from 75 to 79 (+4) over 45.45 hours [CALC-VITALS]. Vital signs were not recorded in 1 set(s) for temperature and 1 set(s) for oxygen saturation [GAP-01, GAP-03, GAP-05, GAP-07].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 was administered 8 times, and Fictional Supplement S-1 was administered 2 times [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be conducted at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 13 to 6 over 45.45 hours [CALC-SCORE]. Vital signs were not recorded in several sets [GAP-01, GAP-03, GAP-05, GAP-07].",
+          "assessment_trend": "The recorded score changed from 13 to 6 (-7 points) over 45.45 hours [CALC-SCORE]. The score showed a net decreasing trend [ASM-00401].",
+          "vital_sign_observations": "Systolic BP changed from 148 to 135 (-13) over 45.45 hours [CALC-VITALS]. Diastolic BP changed from 75 to 79 (+4) over 45.45 hours [CALC-VITALS]. Vital signs were not recorded in 1 set(s) for temperature and 1 set(s) for oxygen saturation [GAP-01, GAP-03, GAP-05, GAP-07].",
+          "medication_documentation": "8 scheduled doses were administered. Fictional Med AW-1 was administered 8 times, and Fictional Supplement S-1 was administered 2 times [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be conducted at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "warnings": [
+          "1 of 9 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C08",
+        "experiment": "A_structured_only",
+        "patient_id": "P013",
+        "booking_number": "B1013",
+        "scenario": "irregular_intervals",
+        "question": "Summarize the timing of recorded assessments, any gaps, and the relevant monitoring guidance.",
+        "hours": null,
+        "gold_facts": {
+          "n": 11,
+          "earliest": 15,
+          "latest": 0,
+          "change": -15
+        },
+        "stated_facts": {
+          "earliest": 15,
+          "latest": 0,
+          "change": -15
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 6,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 2.9,
+        "generation_ms": 8639.1,
+        "total_ms": 8644.2,
+        "prompt_tokens": 3740,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 15 to 0 over 46.1 hours [CALC-SCORE]. There were gaps in assessments, with intervals exceeding the 6-hour review flag [GAP-01].",
+          "assessment_trend": "The recorded score changed from 15 to 0 (-15 points) over 44.43 hours [CALC-SCORE]. The score showed a consistent decrease [ASM-00125].",
+          "vital_sign_observations": "Systolic BP changed from 154 to 129 mmHg (-25 points) over 46.1 hours [CALC-VITALS]. There were missing vital signs in the recorded period [GAP-02].",
+          "medication_documentation": "8 scheduled doses were documented, with 8 administered [CALC-MEDS].",
+          "guideline_context": "No relevant guidelines were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 15 to 0 over 46.1 hours [CALC-SCORE]. There were gaps in assessments, with intervals exceeding the 6-hour review flag [GAP-01].",
+          "assessment_trend": "The recorded score changed from 15 to 0 (-15 points) over 44.43 hours [CALC-SCORE]. The score showed a consistent decrease [ASM-00125].",
+          "vital_sign_observations": "Systolic BP changed from 154 to 129 mmHg (-25 points) over 46.1 hours [CALC-VITALS]. There were missing vital signs in the recorded period [GAP-02].",
+          "medication_documentation": "8 scheduled doses were documented, with 8 administered [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C08",
+        "experiment": "B_dense_rag",
+        "patient_id": "P013",
+        "booking_number": "B1013",
+        "scenario": "irregular_intervals",
+        "question": "Summarize the timing of recorded assessments, any gaps, and the relevant monitoring guidance.",
+        "hours": null,
+        "gold_facts": {
+          "n": 11,
+          "earliest": 15,
+          "latest": 0,
+          "change": -15
+        },
+        "stated_facts": {
+          "earliest": 15,
+          "latest": 0,
+          "change": -15
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 7,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 68.1,
+        "generation_ms": 11918.4,
+        "total_ms": 11989.2,
+        "prompt_tokens": 5448,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 15 to 0 over 44.43 hours [CALC-SCORE]. There were gaps in assessments with intervals exceeding 6 hours [GAP-01].",
+          "assessment_trend": "The recorded score changed from 15 to 0 (a decrease of 15 points) over 44.43 hours [CALC-SCORE]. The score showed a consistent decline [ASM-00125].",
+          "vital_sign_observations": "Systolic BP changed from 154 to 129 (a decrease of 25) over 44.43 hours [CALC-VITALS]. There were missing vital signs in the recorded intervals [GAP-02].",
+          "medication_documentation": "8 scheduled doses were documented, with 8 administered [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 15 to 0 over 44.43 hours [CALC-SCORE]. There were gaps in assessments with intervals exceeding 6 hours [GAP-01].",
+          "assessment_trend": "The recorded score changed from 15 to 0 (a decrease of 15 points) over 44.43 hours [CALC-SCORE]. The score showed a consistent decline [ASM-00125].",
+          "vital_sign_observations": "Systolic BP changed from 154 to 129 (a decrease of 25) over 44.43 hours [CALC-VITALS]. There were missing vital signs in the recorded intervals [GAP-02].",
+          "medication_documentation": "8 scheduled doses were documented, with 8 administered [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C08",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P013",
+        "booking_number": "B1013",
+        "scenario": "irregular_intervals",
+        "question": "Summarize the timing of recorded assessments, any gaps, and the relevant monitoring guidance.",
+        "hours": null,
+        "gold_facts": {
+          "n": 11,
+          "earliest": 15,
+          "latest": 0,
+          "change": -15
+        },
+        "stated_facts": {
+          "earliest": 15,
+          "latest": 0,
+          "change": -15
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 9,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 65.8,
+        "generation_ms": 12667.3,
+        "total_ms": 12735.9,
+        "prompt_tokens": 5448,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 15 to 0 over 44.43 hours [CALC-SCORE]. There were two intervals exceeding the 6-hour review flag [GAP-01, GAP-02].",
+          "assessment_trend": "The recorded score changed from 15 to 0 (a decrease of 15 points) over 44.43 hours [CALC-SCORE]. The score showed a consistent decline [ASM-00125].",
+          "vital_sign_observations": "Systolic BP changed from 154 to 129 (a decrease of 25) over 44.43 hours [CALC-VITALS]. Diastolic BP, pulse, and other vital signs showed minor fluctuations [VIT-00122, VIT-00131].",
+          "medication_documentation": "8 scheduled doses were administered, with all medications documented as completed [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score decreased from 15 to 0 over 44.43 hours [CALC-SCORE]. There were two intervals exceeding the 6-hour review flag [GAP-01, GAP-02].",
+          "assessment_trend": "The recorded score changed from 15 to 0 (a decrease of 15 points) over 44.43 hours [CALC-SCORE]. The score showed a consistent decline [ASM-00125].",
+          "vital_sign_observations": "Systolic BP changed from 154 to 129 (a decrease of 25) over 44.43 hours [CALC-VITALS]. Diastolic BP, pulse, and other vital signs showed minor fluctuations [VIT-00122, VIT-00131].",
+          "medication_documentation": "8 scheduled doses were administered, with all medications documented as completed [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C09",
+        "experiment": "A_structured_only",
+        "patient_id": "P016",
+        "booking_number": "B1016",
+        "scenario": "medication_documentation_gaps",
+        "question": "Summarize documented medication administrations over this period.",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 4,
+          "latest": 5,
+          "change": 1
+        },
+        "stated_facts": {
+          "earliest": 4,
+          "latest": 5,
+          "change": 1
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 7,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 8,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 3.5,
+        "generation_ms": 10700.6,
+        "total_ms": 10706.5,
+        "prompt_tokens": 3804,
+        "raw_output": {
+          "patient_summary": "The patient's COWS score increased from 4 to 5 over 45.58 hours [CALC-SCORE]. Scheduled doses of Fictional Med OW-1 and Fictional Supplement S-1 had missing administration documentation [GAP-01, GAP-02, GAP-03].",
+          "assessment_trend": "The recorded score changed from 4 to 5 (+1 points) over 45.58 hours [CALC-SCORE]. The score showed an overall increasing trend with fluctuations [ASM-00160].",
+          "vital_sign_observations": "Systolic BP decreased from 135 to 125 mmHg (-10) over 45.58 hours [CALC-VITALS]. Diastolic BP decreased from 85 to 78 mmHg (-7) over the same period. Pulse decreased from 83 to 79 beats/min (-4) [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were recorded: 2 administered, 1 held, 1 not administered, 3 not documented, and 1 refused [CALC-MEDS].",
+          "guideline_context": "No relevant guidelines were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The patient's COWS score increased from 4 to 5 over 45.58 hours [CALC-SCORE]. Scheduled doses of Fictional Med OW-1 and Fictional Supplement S-1 had missing administration documentation [GAP-01, GAP-02, GAP-03].",
+          "assessment_trend": "The recorded score changed from 4 to 5 (+1 points) over 45.58 hours [CALC-SCORE]. The score showed an overall increasing trend with fluctuations [ASM-00160].",
+          "vital_sign_observations": "Systolic BP decreased from 135 to 125 mmHg (-10) over 45.58 hours [CALC-VITALS]. Diastolic BP decreased from 85 to 78 mmHg (-7) over the same period. Pulse decreased from 83 to 79 beats/min (-4) [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were recorded: 2 administered, 1 held, 1 not administered, 3 not documented, and 1 refused [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": [
+          "1 of 8 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C09",
+        "experiment": "B_dense_rag",
+        "patient_id": "P016",
+        "booking_number": "B1016",
+        "scenario": "medication_documentation_gaps",
+        "question": "Summarize documented medication administrations over this period.",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 4,
+          "latest": 5,
+          "change": 1
+        },
+        "stated_facts": {
+          "earliest": 4,
+          "latest": 5,
+          "change": 1
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 6,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": null,
+        "n_retrieved": 4,
+        "gold_retrieved": null,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 69.0,
+        "generation_ms": 12435.0,
+        "total_ms": 12506.6,
+        "prompt_tokens": 5087,
+        "raw_output": {
+          "patient_summary": "The patient's COWS score increased from 4 to 5 over 45.58 hours [CALC-SCORE]. Scheduled doses of Fictional Med OW-1 and Fictional Supplement S-1 had no administration documentation [GAP-01].",
+          "assessment_trend": "The recorded score changed from 4 to 5 (+1 points) over 45.58 hours [CALC-SCORE]. The score showed an increasing trend with fluctuations [ASM-00161].",
+          "vital_sign_observations": "Systolic BP changed from 135 to 125 mmHg (-10) over 45.58 hours [CALC-VITALS]. Diastolic BP changed from 85 to 78 mmHg (-7) over 45.58 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses recorded: 2 administered, 1 held, 1 not administered, 3 not documented, 1 refused [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal patients should be monitored using the COWS at least every 4 hours for short-acting opioids [BJA-2023-0125]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's COWS score increased from 4 to 5 over 45.58 hours [CALC-SCORE]. Scheduled doses of Fictional Med OW-1 and Fictional Supplement S-1 had no administration documentation [GAP-01].",
+          "assessment_trend": "The recorded score changed from 4 to 5 (+1 points) over 45.58 hours [CALC-SCORE]. The score showed an increasing trend with fluctuations [ASM-00161].",
+          "vital_sign_observations": "Systolic BP changed from 135 to 125 mmHg (-10) over 45.58 hours [CALC-VITALS]. Diastolic BP changed from 85 to 78 mmHg (-7) over 45.58 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses recorded: 2 administered, 1 held, 1 not administered, 3 not documented, 1 refused [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal patients should be monitored using the COWS at least every 4 hours for short-acting opioids [BJA-2023-0125]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C09",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P016",
+        "booking_number": "B1016",
+        "scenario": "medication_documentation_gaps",
+        "question": "Summarize documented medication administrations over this period.",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 4,
+          "latest": 5,
+          "change": 1
+        },
+        "stated_facts": {
+          "earliest": 4,
+          "latest": 5,
+          "change": 1
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 8,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 7,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": null,
+        "n_retrieved": 4,
+        "gold_retrieved": null,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 68.0,
+        "generation_ms": 12701.9,
+        "total_ms": 12772.7,
+        "prompt_tokens": 5034,
+        "raw_output": {
+          "patient_summary": "The patient's COWS score increased from 4 to 5 over 45.58 hours [CALC-SCORE]. Scheduled doses of Fictional Supplement S-1 and Fictional Med OW-1 had no administration documentation [GAP-01, GAP-02, GAP-03].",
+          "assessment_trend": "The recorded score changed from 4 to 5 (+1 points) over 45.58 hours [CALC-SCORE]. The score showed an increasing trend with fluctuations [ASM-00160].",
+          "vital_sign_observations": "Systolic BP changed from 135 to 125 mmHg (-10) over 45.58 hours [CALC-VITALS]. Diastolic BP changed from 85 to 78 mmHg (-7) over 45.58 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses recorded: 2 administered, 1 held, 1 not administered, 3 not documented, 1 refused [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored with a validated tool like the COWS at least every 4 hours for short-acting opioids [BJA-2023-0152]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's COWS score increased from 4 to 5 over 45.58 hours [CALC-SCORE]. Scheduled doses of Fictional Supplement S-1 and Fictional Med OW-1 had no administration documentation [GAP-01, GAP-02, GAP-03].",
+          "assessment_trend": "The recorded score changed from 4 to 5 (+1 points) over 45.58 hours [CALC-SCORE]. The score showed an increasing trend with fluctuations [ASM-00160].",
+          "vital_sign_observations": "Systolic BP changed from 135 to 125 mmHg (-10) over 45.58 hours [CALC-VITALS]. Diastolic BP changed from 85 to 78 mmHg (-7) over 45.58 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses recorded: 2 administered, 1 held, 1 not administered, 3 not documented, 1 refused [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored with a validated tool like the COWS at least every 4 hours for short-acting opioids [BJA-2023-0152]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C10",
+        "experiment": "A_structured_only",
+        "patient_id": "P015",
+        "booking_number": "B1015",
+        "scenario": "conflicting_documentation",
+        "question": "Summarize this patient's withdrawal progression and note any documentation inconsistencies.",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 3,
+          "latest": 27,
+          "change": 24
+        },
+        "stated_facts": {
+          "earliest": 3,
+          "latest": 27,
+          "change": 24
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 8,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 10,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 3.6,
+        "generation_ms": 11818.9,
+        "total_ms": 11825.1,
+        "prompt_tokens": 4022,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 3 to 27 over 44.02 hours [CALC-SCORE]. There is a possible documentation conflict regarding the refusal of a scheduled dose and the administration of the medication [CONFLICT-01]. Another conflict exists between the recorded CIWA-Ar score and the note stating no signs of withdrawal [CONFLICT-02].",
+          "assessment_trend": "The recorded score changed from 3 to 27 (+24 points) over 44.02 hours [CALC-SCORE]. The score showed an increasing trend with 8 step increases [ASM-00159].",
+          "vital_sign_observations": "Systolic BP increased from 128 to 139 mmHg (+11) over 44.02 hours [CALC-VITALS]. Diastolic BP increased from 76 to 89 mmHg (+13) [CALC-VITALS]. Pulse increased from 69 to 100 beats/min (+31) [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were documented as administered [CALC-MEDS]. Fictional Supplement S-1 and Fictional Med AW-1 were both ordered and completed [ORD-0029, ORD-0030].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 3 to 27 over 44.02 hours [CALC-SCORE]. There is a possible documentation conflict regarding the refusal of a scheduled dose and the administration of the medication [CONFLICT-01]. Another conflict exists between the recorded CIWA-Ar score and the note stating no signs of withdrawal [CONFLICT-02].",
+          "assessment_trend": "The recorded score changed from 3 to 27 (+24 points) over 44.02 hours [CALC-SCORE]. The score showed an increasing trend with 8 step increases [ASM-00159].",
+          "vital_sign_observations": "Systolic BP increased from 128 to 139 mmHg (+11) over 44.02 hours [CALC-VITALS]. Diastolic BP increased from 76 to 89 mmHg (+13) [CALC-VITALS]. Pulse increased from 69 to 100 beats/min (+31) [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses were documented as administered [CALC-MEDS]. Fictional Supplement S-1 and Fictional Med AW-1 were both ordered and completed [ORD-0029, ORD-0030].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C10",
+        "experiment": "B_dense_rag",
+        "patient_id": "P015",
+        "booking_number": "B1015",
+        "scenario": "conflicting_documentation",
+        "question": "Summarize this patient's withdrawal progression and note any documentation inconsistencies.",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 3,
+          "latest": 27,
+          "change": 24
+        },
+        "stated_facts": {
+          "earliest": 3,
+          "latest": 27,
+          "change": 24
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 7,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 11,
+        "uncited_sentences": 4,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 71.6,
+        "generation_ms": 16591.6,
+        "total_ms": 16666.1,
+        "prompt_tokens": 5730,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 3 to 27 over 44 hours [CALC-SCORE]. There is a possible documentation conflict regarding the administration of Fictional Med AW-1 [CONFLICT-01], and a conflict between the CIWA-Ar score and the note stating no signs of withdrawal [CONFLICT-02].",
+          "assessment_trend": "The recorded score changed from 3 to 27 (+24 points) over 44.02 h [CALC-SCORE]. The score showed an increasing trend with 8 step increases [ASM-00159].",
+          "vital_sign_observations": "Systolic BP increased from 128 to 139 mmHg (+11) over 44 hours [CALC-VITALS]. Diastolic BP increased from 76 to 89 mmHg (+13) over 44 hours. Pulse increased from 69 to 100 beats/min (+31) over 44 hours. Temperature increased from 97.9 to 99\u00b0F (+1.1) over 44 hours. Respiratory rate increased from 17 to 19 breaths/min (+2) over 44 hours. Oxygen saturation decreased from 96% to 95% over 44 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses of Fictional Supplement S-1 and Fictional Med AW-1 were documented as administered [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 3 to 27 over 44 hours [CALC-SCORE]. There is a possible documentation conflict regarding the administration of Fictional Med AW-1 [CONFLICT-01], and a conflict between the CIWA-Ar score and the note stating no signs of withdrawal [CONFLICT-02].",
+          "assessment_trend": "The recorded score changed from 3 to 27 (+24 points) over 44.02 h [CALC-SCORE]. The score showed an increasing trend with 8 step increases [ASM-00159].",
+          "vital_sign_observations": "Systolic BP increased from 128 to 139 mmHg (+11) over 44 hours [CALC-VITALS]. Diastolic BP increased from 76 to 89 mmHg (+13) over 44 hours. Pulse increased from 69 to 100 beats/min (+31) over 44 hours. Temperature increased from 97.9 to 99\u00b0F (+1.1) over 44 hours. Respiratory rate increased from 17 to 19 breaths/min (+2) over 44 hours. Oxygen saturation decreased from 96% to 95% over 44 hours [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses of Fictional Supplement S-1 and Fictional Med AW-1 were documented as administered [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "warnings": [
+          "Value(s) not found in the patient evidence (verify): patient_summary: 44; vital_sign_observations: 44",
+          "4 of 11 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C10",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P015",
+        "booking_number": "B1015",
+        "scenario": "conflicting_documentation",
+        "question": "Summarize this patient's withdrawal progression and note any documentation inconsistencies.",
+        "hours": null,
+        "gold_facts": {
+          "n": 12,
+          "earliest": 3,
+          "latest": 27,
+          "change": 24
+        },
+        "stated_facts": {
+          "earliest": 3,
+          "latest": 27,
+          "change": 24
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 7,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 6,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "alcohol_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 66.7,
+        "generation_ms": 15592.6,
+        "total_ms": 15661.9,
+        "prompt_tokens": 5730,
+        "raw_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 3 to 27 over 44 hours [CALC-SCORE]. There is a possible documentation conflict regarding the administration of Fictional Med AW-1 [CONFLICT-01], and a conflict between the CIWA-Ar score and the note stating no signs of withdrawal [CONFLICT-02].",
+          "assessment_trend": "The recorded score changed from 3 to 27 (+24 points) over 44.02 h [CALC-SCORE]. The score increased steadily, with a net direction of increasing [ASM-00159].",
+          "vital_sign_observations": "Systolic BP increased from 128 to 139 mmHg (+11), diastolic BP increased from 76 to 89 mmHg (+13), pulse increased from 69 to 100 beats/min (+31), temperature increased from 97.9 to 99\u00b0F (+1.1), respiratory rate increased from 17 to 19 breaths/min (+2), and oxygen saturation decreased from 96% to 95% [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses of Fictional Supplement S-1 and Fictional Med AW-1 were documented as administered [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's CIWA-Ar score increased from 3 to 27 over 44 hours [CALC-SCORE]. There is a possible documentation conflict regarding the administration of Fictional Med AW-1 [CONFLICT-01], and a conflict between the CIWA-Ar score and the note stating no signs of withdrawal [CONFLICT-02].",
+          "assessment_trend": "The recorded score changed from 3 to 27 (+24 points) over 44.02 h [CALC-SCORE]. The score increased steadily, with a net direction of increasing [ASM-00159].",
+          "vital_sign_observations": "Systolic BP increased from 128 to 139 mmHg (+11), diastolic BP increased from 76 to 89 mmHg (+13), pulse increased from 69 to 100 beats/min (+31), temperature increased from 97.9 to 99\u00b0F (+1.1), respiratory rate increased from 17 to 19 breaths/min (+2), and oxygen saturation decreased from 96% to 95% [CALC-VITALS].",
+          "medication_documentation": "8 scheduled doses of Fictional Supplement S-1 and Fictional Med AW-1 were documented as administered [CALC-MEDS].",
+          "guideline_context": "The CIWA-Ar should be assessed at least every 8 hours during alcohol withdrawal management until the score remains below 10 for 24 hours [BJA-2023-0071]."
+        },
+        "warnings": [
+          "Value(s) not found in the patient evidence (verify): patient_summary: 44"
+        ]
+      },
+      {
+        "case_id": "C11",
+        "experiment": "A_structured_only",
+        "patient_id": "P002",
+        "booking_number": "B1002",
+        "scenario": "incomplete_monitoring",
+        "question": "Summarize the monitoring record and what is missing from it.",
+        "hours": null,
+        "gold_facts": {
+          "n": 6,
+          "earliest": 7,
+          "latest": 15,
+          "change": 8
+        },
+        "stated_facts": {
+          "earliest": 7,
+          "latest": 15,
+          "change": 8
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 5,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 9,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 1.6,
+        "generation_ms": 11185.8,
+        "total_ms": 11189.9,
+        "prompt_tokens": 3209,
+        "raw_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring on 2026-03-19 08:12 and had a COWS score of 7 at 2026-03-19 08:24 [CALC-SCORE]. The latest COWS score was 15 at 2026-03-20 04:37 [CALC-SCORE]. No assessment was recorded in the last 20.88 h [GAP-01].",
+          "assessment_trend": "The recorded score changed from 7 to 15 (+8 points) over 20.22 h [CALC-SCORE]. The score increased overall with 3 step increases and 2 step decreases [ASM-00013].",
+          "vital_sign_observations": "Systolic BP increased from 130 to 142 mmHg (+12) over 41.8 h [CALC-VITALS]. Diastolic BP increased from 79 to 81 mmHg (+2) [CALC-VITALS]. No vital signs were recorded in the last 20.88 h [GAP-01].",
+          "medication_documentation": "4 doses of Fictional Med OW-1 were administered, and 4 doses were not documented [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring on 2026-03-19 08:12 and had a COWS score of 7 at 2026-03-19 08:24 [CALC-SCORE]. The latest COWS score was 15 at 2026-03-20 04:37 [CALC-SCORE]. No assessment was recorded in the last 20.88 h [GAP-01].",
+          "assessment_trend": "The recorded score changed from 7 to 15 (+8 points) over 20.22 h [CALC-SCORE]. The score increased overall with 3 step increases and 2 step decreases [ASM-00013].",
+          "vital_sign_observations": "Systolic BP increased from 130 to 142 mmHg (+12) over 41.8 h [CALC-VITALS]. Diastolic BP increased from 79 to 81 mmHg (+2) [CALC-VITALS]. No vital signs were recorded in the last 20.88 h [GAP-01].",
+          "medication_documentation": "4 doses of Fictional Med OW-1 were administered, and 4 doses were not documented [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C11",
+        "experiment": "B_dense_rag",
+        "patient_id": "P002",
+        "booking_number": "B1002",
+        "scenario": "incomplete_monitoring",
+        "question": "Summarize the monitoring record and what is missing from it.",
+        "hours": null,
+        "gold_facts": {
+          "n": 6,
+          "earliest": 7,
+          "latest": 15,
+          "change": 8
+        },
+        "stated_facts": {
+          "earliest": 7,
+          "latest": 15,
+          "change": 8
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 11,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 11,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "opioid_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 2,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 68.0,
+        "generation_ms": 17170.4,
+        "total_ms": 17241.3,
+        "prompt_tokens": 4314,
+        "raw_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring on 2026-03-19 08:12 and had a COWS score of 7 at 2026-03-19 08:24 [CALC-SCORE]. The latest COWS score was 15 at 2026-03-20 04:37 [CALC-SCORE]. No assessment was recorded in the last 20.88 h of the window [GAP-01].",
+          "assessment_trend": "The recorded score changed from 7 to 15 (+8 points) over 20.22 h [CALC-SCORE]. The score increased gradually with 3 step increases and 2 step decreases [ASM-00013].",
+          "vital_sign_observations": "Systolic BP changed from 130 to 142 mmHg (+12) over 41.8 h [CALC-VITALS]. Diastolic BP changed from 79 to 81 mmHg (+2) over 41.8 h [CALC-VITALS]. Pulse changed from 87 to 104 beats/min (+17) over 41.8 h [CALC-VITALS]. No vital signs were recorded in the last 20.88 h of the window [GAP-01].",
+          "medication_documentation": "8 scheduled doses were recorded. 4 were administered and 4 were not documented [CALC-MEDS]. Fictional Med OW-1 (demo only) had scheduled doses at 2026-03-20 09:30, 2026-03-20 17:30, and 2026-03-21 01:30, but no administration documentation was recorded [GAP-02, GAP-03, GAP-04, GAP-05].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours for the first 72 hours of incarceration [BJA-2023-0102]. COWS is recommended for monitoring opioid withdrawal [BJA-2023-0124]."
+        },
+        "final_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring on 2026-03-19 08:12 and had a COWS score of 7 at 2026-03-19 08:24 [CALC-SCORE]. The latest COWS score was 15 at 2026-03-20 04:37 [CALC-SCORE]. No assessment was recorded in the last 20.88 h of the window [GAP-01].",
+          "assessment_trend": "The recorded score changed from 7 to 15 (+8 points) over 20.22 h [CALC-SCORE]. The score increased gradually with 3 step increases and 2 step decreases [ASM-00013].",
+          "vital_sign_observations": "Systolic BP changed from 130 to 142 mmHg (+12) over 41.8 h [CALC-VITALS]. Diastolic BP changed from 79 to 81 mmHg (+2) over 41.8 h [CALC-VITALS]. Pulse changed from 87 to 104 beats/min (+17) over 41.8 h [CALC-VITALS]. No vital signs were recorded in the last 20.88 h of the window [GAP-01].",
+          "medication_documentation": "8 scheduled doses were recorded. 4 were administered and 4 were not documented [CALC-MEDS]. Fictional Med OW-1 (demo only) had scheduled doses at 2026-03-20 09:30, 2026-03-20 17:30, and 2026-03-21 01:30, but no administration documentation was recorded [GAP-02, GAP-03, GAP-04, GAP-05].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours for the first 72 hours of incarceration [BJA-2023-0102]. COWS is recommended for monitoring opioid withdrawal [BJA-2023-0124]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C11",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P002",
+        "booking_number": "B1002",
+        "scenario": "incomplete_monitoring",
+        "question": "Summarize the monitoring record and what is missing from it.",
+        "hours": null,
+        "gold_facts": {
+          "n": 6,
+          "earliest": 7,
+          "latest": 15,
+          "change": 8
+        },
+        "stated_facts": {
+          "earliest": 7,
+          "latest": 15,
+          "change": 8
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 11,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 10,
+        "uncited_sentences": 1,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "opioid_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 2,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 69.2,
+        "generation_ms": 14733.8,
+        "total_ms": 14805.5,
+        "prompt_tokens": 4303,
+        "raw_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring on 2026-03-19 08:12 and had a COWS score of 7 at 2026-03-19 08:24. The score increased to 15 at 2026-03-20 04:37 [CALC-SCORE]. No assessment was recorded in the last 20.88 h of the window [GAP-01].",
+          "assessment_trend": "The recorded score changed from 7 to 15 (+8 points) over 20.22 h [CALC-SCORE]. The score increased gradually with 3 step increases and 2 step decreases [ASM-00013].",
+          "vital_sign_observations": "Systolic BP changed from 130 to 142 mmHg (+12) over 41.8 h [CALC-VITALS]. Diastolic BP changed from 79 to 81 mmHg (+2) [CALC-VITALS]. No vital signs were recorded in the last 20.88 h of the window [GAP-01].",
+          "medication_documentation": "8 scheduled doses were recorded. 4 were administered, 4 were not documented [CALC-MEDS]. Fictional Med OW-1 and S-1 were scheduled but some doses had no administration documentation [GAP-02, GAP-03, GAP-04, GAP-05].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours for the first 72 hours [BJA-2023-0102]. COWS is recommended for monitoring opioid withdrawal [BJA-2023-0125]."
+        },
+        "final_output": {
+          "patient_summary": "The patient was placed on withdrawal monitoring on 2026-03-19 08:12 and had a COWS score of 7 at 2026-03-19 08:24. The score increased to 15 at 2026-03-20 04:37 [CALC-SCORE]. No assessment was recorded in the last 20.88 h of the window [GAP-01].",
+          "assessment_trend": "The recorded score changed from 7 to 15 (+8 points) over 20.22 h [CALC-SCORE]. The score increased gradually with 3 step increases and 2 step decreases [ASM-00013].",
+          "vital_sign_observations": "Systolic BP changed from 130 to 142 mmHg (+12) over 41.8 h [CALC-VITALS]. Diastolic BP changed from 79 to 81 mmHg (+2) [CALC-VITALS]. No vital signs were recorded in the last 20.88 h of the window [GAP-01].",
+          "medication_documentation": "8 scheduled doses were recorded. 4 were administered, 4 were not documented [CALC-MEDS]. Fictional Med OW-1 and S-1 were scheduled but some doses had no administration documentation [GAP-02, GAP-03, GAP-04, GAP-05].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours for the first 72 hours [BJA-2023-0102]. COWS is recommended for monitoring opioid withdrawal [BJA-2023-0125]."
+        },
+        "warnings": [
+          "1 of 10 patient-record sentence(s) have no citation."
+        ]
+      },
+      {
+        "case_id": "C12",
+        "experiment": "A_structured_only",
+        "patient_id": "P001",
+        "booking_number": "B1001",
+        "scenario": "conflicting_documentation",
+        "question": "Which relevant guideline passages discuss withdrawal monitoring for this patient?",
+        "hours": 24,
+        "gold_facts": {
+          "n": 6,
+          "earliest": 13,
+          "latest": 17,
+          "change": 4
+        },
+        "stated_facts": {
+          "earliest": 13,
+          "latest": 17,
+          "change": 4
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 5,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 9,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": null,
+        "n_retrieved": 0,
+        "gold_retrieved": null,
+        "guideline_cited": 0,
+        "guideline_cited_relevant": 0,
+        "retrieval_ms": 1.5,
+        "generation_ms": 9508.0,
+        "total_ms": 9510.0,
+        "prompt_tokens": 2707,
+        "raw_output": {
+          "patient_summary": "The patient's COWS score increased from 13 to 17 over 20.13 hours [CALC-SCORE]. There is a possible documentation conflict between the COWS score and the note stating no signs of withdrawal [CONFLICT-01].",
+          "assessment_trend": "The recorded score changed from 13 to 17 (+4 points) over 20.13 h [CALC-SCORE]. The score showed an increasing trend with 3 step increases and 1 step decrease [ASM-00012].",
+          "vital_sign_observations": "Systolic BP decreased from 136 to 128 mmHg [CALC-VITALS]. Diastolic BP increased from 77 to 83 mmHg [CALC-VITALS]. Pulse increased from 86 to 90 beats/min [CALC-VITALS]. Temperature remained stable at 98.6\u00b0F [CALC-VITALS].",
+          "medication_documentation": "4 doses of Fictional Med OW-1 and 1 dose of Fictional Supplement S-1 were documented as administered [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "final_output": {
+          "patient_summary": "The patient's COWS score increased from 13 to 17 over 20.13 hours [CALC-SCORE]. There is a possible documentation conflict between the COWS score and the note stating no signs of withdrawal [CONFLICT-01].",
+          "assessment_trend": "The recorded score changed from 13 to 17 (+4 points) over 20.13 h [CALC-SCORE]. The score showed an increasing trend with 3 step increases and 1 step decrease [ASM-00012].",
+          "vital_sign_observations": "Systolic BP decreased from 136 to 128 mmHg [CALC-VITALS]. Diastolic BP increased from 77 to 83 mmHg [CALC-VITALS]. Pulse increased from 86 to 90 beats/min [CALC-VITALS]. Temperature remained stable at 98.6\u00b0F [CALC-VITALS].",
+          "medication_documentation": "4 doses of Fictional Med OW-1 and 1 dose of Fictional Supplement S-1 were documented as administered [CALC-MEDS].",
+          "guideline_context": "No guideline passages were retrieved for this request."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C12",
+        "experiment": "B_dense_rag",
+        "patient_id": "P001",
+        "booking_number": "B1001",
+        "scenario": "conflicting_documentation",
+        "question": "Which relevant guideline passages discuss withdrawal monitoring for this patient?",
+        "hours": 24,
+        "gold_facts": {
+          "n": 6,
+          "earliest": 13,
+          "latest": 17,
+          "change": 4
+        },
+        "stated_facts": {
+          "earliest": 13,
+          "latest": 17,
+          "change": 4
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 6,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 9,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "opioid_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 1,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 43.8,
+        "generation_ms": 11643.4,
+        "total_ms": 11689.4,
+        "prompt_tokens": 3812,
+        "raw_output": {
+          "patient_summary": "The patient's COWS score increased from 13 to 17 over 20.13 hours [CALC-SCORE]. A possible documentation conflict exists between the COWS score and the note stating no signs of withdrawal [CONFLICT-01].",
+          "assessment_trend": "The recorded score changed from 13 to 17 (+4 points) over 20.13 hours [CALC-SCORE]. The score showed an increasing trend with 3 step increases and 1 step decrease [ASM-00012].",
+          "vital_sign_observations": "Systolic BP changed from 136 to 128 (-8 mmHg) [CALC-VITALS]. Diastolic BP changed from 77 to 83 (+6 mmHg) [CALC-VITALS]. Pulse changed from 86 to 90 (+4 beats/min) [CALC-VITALS]. Temperature remained stable at 98.6\u00b0F [CALC-VITALS].",
+          "medication_documentation": "4 scheduled doses were documented, all administered [CALC-MEDS].",
+          "guideline_context": "Guidelines recommend monitoring opioid withdrawal using the COWS at least every 4 hours for patients who report use of short-acting opioids [BJA-2023-0152]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's COWS score increased from 13 to 17 over 20.13 hours [CALC-SCORE]. A possible documentation conflict exists between the COWS score and the note stating no signs of withdrawal [CONFLICT-01].",
+          "assessment_trend": "The recorded score changed from 13 to 17 (+4 points) over 20.13 hours [CALC-SCORE]. The score showed an increasing trend with 3 step increases and 1 step decrease [ASM-00012].",
+          "vital_sign_observations": "Systolic BP changed from 136 to 128 (-8 mmHg) [CALC-VITALS]. Diastolic BP changed from 77 to 83 (+6 mmHg) [CALC-VITALS]. Pulse changed from 86 to 90 (+4 beats/min) [CALC-VITALS]. Temperature remained stable at 98.6\u00b0F [CALC-VITALS].",
+          "medication_documentation": "4 scheduled doses were documented, all administered [CALC-MEDS].",
+          "guideline_context": "Guidelines recommend monitoring opioid withdrawal using the COWS at least every 4 hours for patients who report use of short-acting opioids [BJA-2023-0152]."
+        },
+        "warnings": []
+      },
+      {
+        "case_id": "C12",
+        "experiment": "C_hybrid_rag",
+        "patient_id": "P001",
+        "booking_number": "B1001",
+        "scenario": "conflicting_documentation",
+        "question": "Which relevant guideline passages discuss withdrawal monitoring for this patient?",
+        "hours": 24,
+        "gold_facts": {
+          "n": 6,
+          "earliest": 13,
+          "latest": 17,
+          "change": 4
+        },
+        "stated_facts": {
+          "earliest": 13,
+          "latest": 17,
+          "change": 4
+        },
+        "facts_correct": 3,
+        "facts_stated": 3,
+        "facts_total": 3,
+        "valid_citations": 7,
+        "invalid_citations": 0,
+        "fact_check_failures": 0,
+        "fact_check_detail": [],
+        "sentences": 9,
+        "uncited_sentences": 0,
+        "removed_sentences": 0,
+        "json_ok": true,
+        "generated": true,
+        "has_gaps": true,
+        "gap_acknowledged": true,
+        "guideline_gold": "opioid_monitoring",
+        "n_retrieved": 4,
+        "gold_retrieved": true,
+        "guideline_cited": 2,
+        "guideline_cited_relevant": 1,
+        "retrieval_ms": 69.2,
+        "generation_ms": 12427.5,
+        "total_ms": 12499.0,
+        "prompt_tokens": 3801,
+        "raw_output": {
+          "patient_summary": "The patient's COWS score increased from 13 to 17 over 20.13 hours [CALC-SCORE]. A possible documentation conflict exists between the COWS score and the note stating no signs of withdrawal [CONFLICT-01].",
+          "assessment_trend": "The recorded score changed from 13 to 17 (+4 points) over 20.13 hours [CALC-SCORE]. The score showed an increasing trend with 3 step increases and 1 step decrease [ASM-00012].",
+          "vital_sign_observations": "Systolic BP decreased from 136 to 128 mmHg [CALC-VITALS]. Diastolic BP increased from 77 to 83 mmHg [CALC-VITALS]. Pulse increased from 86 to 90 beats/min [CALC-VITALS]. Temperature remained stable at 98.6\u00b0F [CALC-VITALS].",
+          "medication_documentation": "4 scheduled doses were documented, all completed [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours for the first 72 hours using the COWS [BJA-2023-0102]. COWS should be used for monitoring opioid withdrawal, with intervals determined by a qualified health care professional based on the anticipated timing and severity of withdrawal [BJA-2023-0124]."
+        },
+        "final_output": {
+          "patient_summary": "The patient's COWS score increased from 13 to 17 over 20.13 hours [CALC-SCORE]. A possible documentation conflict exists between the COWS score and the note stating no signs of withdrawal [CONFLICT-01].",
+          "assessment_trend": "The recorded score changed from 13 to 17 (+4 points) over 20.13 hours [CALC-SCORE]. The score showed an increasing trend with 3 step increases and 1 step decrease [ASM-00012].",
+          "vital_sign_observations": "Systolic BP decreased from 136 to 128 mmHg [CALC-VITALS]. Diastolic BP increased from 77 to 83 mmHg [CALC-VITALS]. Pulse increased from 86 to 90 beats/min [CALC-VITALS]. Temperature remained stable at 98.6\u00b0F [CALC-VITALS].",
+          "medication_documentation": "4 scheduled doses were documented, all completed [CALC-MEDS].",
+          "guideline_context": "Opioid withdrawal should be monitored at least every 4 hours for the first 72 hours using the COWS [BJA-2023-0102]. COWS should be used for monitoring opioid withdrawal, with intervals determined by a qualified health care professional based on the anticipated timing and severity of withdrawal [BJA-2023-0124]."
+        },
+        "warnings": []
+      }
+    ]
+  },
+  "guideline_qa": {
+    "n_questions": 21,
+    "experiments": {
+      "dense": {
+        "label": "Dense RAG",
+        "metrics": {
+          "answered_rate": 1.0,
+          "citation_validity": 1.0,
+          "cited_gold_rate": 0.8571,
+          "gold_retrieved_rate": 0.8571,
+          "mean_total_ms": 5898.7381
+        }
+      },
+      "hybrid": {
+        "label": "Hybrid RAG",
+        "metrics": {
+          "answered_rate": 1.0,
+          "citation_validity": 1.0,
+          "cited_gold_rate": 0.9048,
+          "gold_retrieved_rate": 0.9524,
+          "mean_total_ms": 5677.5333
+        }
+      }
+    },
+    "per_question": [
+      {
+        "id": "G01",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 6629.1,
+        "answer": "The CIWA-Ar should be repeated at least every 8 hours during alcohol withdrawal treatment until the CIWA-Ar score remains below 10 for 24 hours [BJA-2023-0071]. If the CIWA-Ar is \u2265 19, it should be repeated at least every 6 hours until the score falls below 19, then continue monitoring at least every 8 hours until the score remains below 10 for 24 hours [BJA-2023-0151].",
+        "citations": [
+          "BJA-2023-0071",
+          "BJA-2023-0151"
+        ]
+      },
+      {
+        "id": "G01",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 8879.5,
+        "answer": "The CIWA-Ar should be repeated at least every 8 hours during alcohol withdrawal treatment until the CIWA-Ar score remains below 10 for 24 hours [BJA-2023-0071]. If the CIWA-Ar is \u2265 19, it should be repeated at least every 6 hours until the score falls below 19, then continue monitoring every 8 hours until the score remains below 10 for 24 hours [BJA-2023-0071]. Additionally, the CIWA-Ar should be repeated every hour if the total CIWA-Ar score is 8 or greater [BOP-2020-0065]. More frequent monitoring should be conducted if clinically indicated [BJA-2023-0071].",
+        "citations": [
+          "BJA-2023-0071",
+          "BOP-2020-0065"
+        ]
+      },
+      {
+        "id": "G02",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 3786.0,
+        "answer": "Patients who used fentanyl or heroin should be monitored using the Clinical Opiate Withdrawal Score (COWS) at least every 4 hours [BJA-2023-0152].",
+        "citations": [
+          "BJA-2023-0152"
+        ]
+      },
+      {
+        "id": "G02",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5331.9,
+        "answer": "Patients who used fentanyl or heroin should be monitored using the COWS at least every 4 hours [BJA-2023-0125]. The same guideline also states that monitoring using the COWS at least every 4 hours for patients who report use of a short-acting opioid (e.g., heroin, oxycodone, fentanyl) [BJA-2023-0152].",
+        "citations": [
+          "BJA-2023-0125",
+          "BJA-2023-0152"
+        ]
+      },
+      {
+        "id": "G03",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 3478.0,
+        "answer": "Custody staff should be well-trained to identify oversedation and to alert health care staff if a patient appears oversedated [BJA-2023-0072].",
+        "citations": [
+          "BJA-2023-0072"
+        ]
+      },
+      {
+        "id": "G03",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 3654.2,
+        "answer": "Custody staff should be well-trained to identify oversedation and to alert health care staff if a patient appears oversedated [BJA-2023-0072].",
+        "citations": [
+          "BJA-2023-0072"
+        ]
+      },
+      {
+        "id": "G04",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 7386.2,
+        "answer": "The BJA guidance states that alcohol withdrawal severity assessment scales, including the CIWA-Ar, should not be used as stand-alone diagnostic tools because scores can be influenced by conditions other than alcohol withdrawal [BJA-2023-0068]. The BOP guidance states that the CIWA-Ar is an evidence-based scoring system that should be used to objectively assess the severity and progression of alcohol withdrawal symptoms [BOP-2020-0017]. The BOP guidance also emphasizes that the CIWA-Ar should be used in conjunction with a clinical assessment and vital sign monitoring [BOP-2020-0065].",
+        "citations": [
+          "BJA-2023-0068",
+          "BOP-2020-0017",
+          "BOP-2020-0065"
+        ]
+      },
+      {
+        "id": "G04",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5953.9,
+        "answer": "No, alcohol withdrawal severity assessment scales such as the CIWA-Ar should not be used as stand-alone diagnostic tools because scores can be influenced by conditions other than alcohol withdrawal [BJA-2023-0068]. The CIWA-Ar is a validated tool for monitoring severity but does not replace a clinical assessment, including collection of the patient\u2019s vital signs [BJA-2023-0071].",
+        "citations": [
+          "BJA-2023-0068",
+          "BJA-2023-0071"
+        ]
+      },
+      {
+        "id": "G05",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 3494.3,
+        "answer": "Oral or IV alcohol should not be used for the prevention or treatment of alcohol withdrawal [BJA-2023-0070].",
+        "citations": [
+          "BJA-2023-0070"
+        ]
+      },
+      {
+        "id": "G05",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 3384.8,
+        "answer": "Oral or IV alcohol should not be used for the prevention or treatment of alcohol withdrawal [BJA-2023-0070].",
+        "citations": [
+          "BJA-2023-0070"
+        ]
+      },
+      {
+        "id": "G06",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 7002.6,
+        "answer": "Staff should watch for indicators of dehydration such as feeling very thirsty, dry mouth, urinating and sweating less than usual, dark-colored urine, dry skin, feeling tired, dizziness, confusion, fainting, lack of urination, rapid heartbeat, rapid breathing, and shock [BJA-2023-0154]. It is important that custody staff are alert to indicators of dehydration and well-trained to report concerns about dehydration to health care staff [BJA-2023-0047]. Regular clinical assessments should monitor for dehydration, and health care staff should be alerted if the patient reports, or custody staff otherwise become aware, that the patient has stopped drinking, has a significant reduction in urine volume or frequency of urination, or has very dark urine [BJA-2023-0072].",
+        "citations": [
+          "BJA-2023-0154",
+          "BJA-2023-0047",
+          "BJA-2023-0072"
+        ]
+      },
+      {
+        "id": "G06",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 4154.1,
+        "answer": "Staff should watch for indicators of dehydration such as feeling very thirsty, dry mouth, urinating and sweating less than usual, dark-colored urine, dry skin, feeling tired, dizziness, confusion, fainting, lack of urination, rapid heartbeat, rapid breathing, and shock [BJA-2023-0154].",
+        "citations": [
+          "BJA-2023-0154"
+        ]
+      },
+      {
+        "id": "G07",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5927.8,
+        "answer": "No, a negative breath or urine alcohol test does not rule out the risk of alcohol withdrawal. The BJA-2023-0069 passage states that toxicological testing can help differentiate between alcohol intoxication and sedative intoxication, but BAC/BrAC results alone do not establish risk for withdrawal. Additionally, the BJA-2023-0018 passage mentions that an individual\u2019s report of recent, regular substance use, SUD, or withdrawal risk constitutes a positive screen, even if they are asymptomatic.",
+        "citations": [
+          "BJA-2023-0069",
+          "BJA-2023-0018"
+        ]
+      },
+      {
+        "id": "G07",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5173.2,
+        "answer": "No, a negative breath or urine alcohol test does not rule out the risk of alcohol withdrawal. The BJA-2023-0069 passage states that toxicological testing can help differentiate between alcohol intoxication and sedative intoxication, but BAC/BrAC results alone do not establish risk for withdrawal. Additionally, the BJA-2023-0069 passage explicitly mentions that a negative test result should not rule out the risk of developing alcohol withdrawal.",
+        "citations": [
+          "BJA-2023-0069"
+        ]
+      },
+      {
+        "id": "G08",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 4897.8,
+        "answer": "Factors that increase the risk of complicated alcohol withdrawal include a history of complicated alcohol withdrawal, multiple prior withdrawal episodes, comorbid illnesses, age over 65, marked autonomic instability on presentation, long duration of heavy and regular alcohol consumption, seizures during the current withdrawal episode, physiological dependence on sedatives, and a positive blood alcohol concentration in the presence of withdrawal signs or symptoms [BJA-2023-0069].",
+        "citations": [
+          "BJA-2023-0069"
+        ]
+      },
+      {
+        "id": "G08",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5148.9,
+        "answer": "Factors that increase the risk of complicated alcohol withdrawal include a history of complicated alcohol withdrawal, multiple prior withdrawal episodes, comorbid illnesses, age over 65, marked autonomic instability on presentation, long duration of heavy and regular alcohol consumption, seizures during the current withdrawal episode, physiological dependence on sedatives, and a positive blood alcohol concentration in the presence of withdrawal signs or symptoms [BJA-2023-0069].",
+        "citations": [
+          "BJA-2023-0069"
+        ]
+      },
+      {
+        "id": "G09",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5898.1,
+        "answer": "Thiamine replacement is indicated for patients with suspected alcohol use disorder to reduce the risk of encephalopathy. It should be administered at a dose of 100 mg daily, either orally or intramuscularly, for 3\u20135 days. Parenteral thiamine is preferred for the treatment of known or suspected encephalopathy because intestinal absorption is unpredictable. All patients with suspected Wernicke encephalopathy and/or suspected Korsakoff syndrome require immediate administration of parenteral thiamine [BOP-2020-0020].",
+        "citations": [
+          "BOP-2020-0020"
+        ]
+      },
+      {
+        "id": "G09",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 7338.6,
+        "answer": "Thiamine replacement is indicated for patients with suspected alcohol use disorder to reduce the risk of Wernicke's encephalopathy. It should be administered at a dose of 100 mg daily, either orally or intramuscularly, for 3\u20135 days [BJA-2023-0080]. Parenteral thiamine is preferred for the treatment of known or suspected encephalopathy because intestinal absorption is unpredictable [BOP-2020-0020]. Patients with suspected Wernicke encephalopathy and/or Korsakoff psychosis require immediate parenteral administration of thiamine and transfer to a local hospital [BJA-2023-0075].",
+        "citations": [
+          "BJA-2023-0080",
+          "BOP-2020-0020",
+          "BJA-2023-0075"
+        ]
+      },
+      {
+        "id": "G10",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 9332.0,
+        "answer": "Opioid withdrawal symptom severity should be monitored with a validated tool, such as the COWS [BJA-2023-0124]. Monitoring should be discontinued only upon a patient-specific order from the prescriber based on clinical evaluation [BJA-2023-0124]. Individuals should be monitored for signs and symptoms of opioid withdrawal at least every 4 hours for the first 72 hours of incarceration [BJA-2023-0102]. Patients who appear unwell or score \u2265 3 on the COWS should be referred for immediate clinical assessment [BJA-2023-0102]. The onset and severity of opioid withdrawal is dependent on the type of drug taken, when it was last taken, and how long it lasts in the person\u2019s body. Monitoring intervals should be determined by a qualified health care professional based on the anticipated timing and severity of withdrawal for the individual patient [BJA-2023-0125].",
+        "citations": [
+          "BJA-2023-0124",
+          "BJA-2023-0102",
+          "BJA-2023-0125"
+        ]
+      },
+      {
+        "id": "G10",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 7241.2,
+        "answer": "Opioid withdrawal symptom severity should be monitored with a validated tool, such as the COWS [BJA-2023-0124]. Patients who report use of a short-acting opioid should be monitored using the COWS at least every 4 hours [BJA-2023-0125]. Patients who report using long-acting opioids should be monitored using the COWS at least every 8 hours [BJA-2023-0125]. Monitoring should only be discontinued upon a patient-specific order from the prescriber based on clinical evaluation and determination that it is safe to do so [BJA-2023-0124].",
+        "citations": [
+          "BJA-2023-0124",
+          "BJA-2023-0125"
+        ]
+      },
+      {
+        "id": "G11",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 4796.3,
+        "answer": "Yes, custody staff may be trained to effectively administer the COWS, including collection of vital signs [BJA-2023-0124]. This training should be provided by a qualified health care professional assigned this task by the health services administrator or the responsible provider [BJA-2023-0044].",
+        "citations": [
+          "BJA-2023-0124",
+          "BJA-2023-0044"
+        ]
+      },
+      {
+        "id": "G11",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 4925.5,
+        "answer": "Yes, custody staff may be trained to effectively administer the COWS, including collection of vital signs [BJA-2023-0124]. This training should be provided by a qualified health care professional assigned this task by the health services administrator or the responsible provider [BJA-2023-0044].",
+        "citations": [
+          "BJA-2023-0124",
+          "BJA-2023-0044"
+        ]
+      },
+      {
+        "id": "G12",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 7085.4,
+        "answer": "Patients treated for sedative withdrawal should have a daily clinical assessment by a qualified health care professional for at least the first week [BJA-2023-0092]. After the first week, patients should be assessed at least two times per week until the taper is complete [BJA-2023-0092]. Additionally, individuals who self-report risk for sedative withdrawal should be monitored at least every 6 hours for at least the first week [BJA-2023-0088]. Frequent clinical assessments should be conducted by qualified health care professionals not less than twice per day, not more than 16 hours apart [BJA-2023-0037].",
+        "citations": [
+          "BJA-2023-0092",
+          "BJA-2023-0088",
+          "BJA-2023-0037"
+        ]
+      },
+      {
+        "id": "G12",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 4632.6,
+        "answer": "Patients treated for sedative withdrawal should have a daily clinical assessment by a qualified health care professional for at least the first week, or as their condition indicates [BJA-2023-0092]. After the first week, patients should be assessed by a qualified health care professional at least two times per week until the taper is complete [BJA-2023-0092].",
+        "citations": [
+          "BJA-2023-0092"
+        ]
+      },
+      {
+        "id": "G13",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": false,
+        "gold_retrieved": false,
+        "total_ms": 6089.2,
+        "answer": "Patients in stimulant withdrawal should be monitored at least twice per day for the first 72 hours from intake [BJA-2023-0136]. Monitoring should also occur at least every 4 hours for the first 72 hours from arrival to facility [BJA-2023-0025]. If an individual appears unwell to a layperson, they should be referred for immediate clinical assessment [BJA-2023-0136]. Monitoring may be conducted by a qualified health care professional or well-trained and supervised custody staff [BJA-2023-0025].",
+        "citations": [
+          "BJA-2023-0136",
+          "BJA-2023-0025"
+        ]
+      },
+      {
+        "id": "G13",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": false,
+        "gold_retrieved": false,
+        "total_ms": 5708.9,
+        "answer": "Patients in stimulant withdrawal should be monitored at least twice per day for the first 72 hours from intake [BJA-2023-0136]. Monitoring should be at least every 4 hours for the first 72 hours from arrival to facility [BJA-2023-0025]. Staff should be alert to any indicators that the individual is unwell, not only those listed here [BJA-2023-0136]. Monitoring may be conducted by a qualified health care professional or well-trained and supervised custody staff [BJA-2023-0025].",
+        "citations": [
+          "BJA-2023-0136",
+          "BJA-2023-0025"
+        ]
+      },
+      {
+        "id": "G14",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5642.8,
+        "answer": "The minimum frequency of clinical assessments by qualified health care professionals during withdrawal management is not less than twice per day, not more than 16 hours apart [BJA-2023-0037]. However, patients treated for sedative withdrawal should have a daily clinical assessment for at least the first week [BJA-2023-0092]. The frequency of monitoring and assessment should not be decreased or discontinued without a patient-specific order from a physician [BJA-2023-0039].",
+        "citations": [
+          "BJA-2023-0037",
+          "BJA-2023-0092",
+          "BJA-2023-0039"
+        ]
+      },
+      {
+        "id": "G14",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 6754.4,
+        "answer": "The minimum frequency of clinical assessments by qualified health care professionals during withdrawal management is not less than twice per day, not more than 16 hours apart [BJA-2023-0037]. For sedative withdrawal, patients should have a daily clinical assessment by a qualified health care professional for at least the first week [BJA-2023-0092]. For alcohol withdrawal, the Clinical Institute Withdrawal Assessment for Alcohol Scale, Revised (CIWA-Ar) should be reassessed at least every 8 hours until the score remains below 10 for 24 hours [BJA-2023-0151].",
+        "citations": [
+          "BJA-2023-0037",
+          "BJA-2023-0092",
+          "BJA-2023-0151"
+        ]
+      },
+      {
+        "id": "G15",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 6412.3,
+        "answer": "Suicide risk should be assessed during withdrawal management. The frequency of suicide attempts is substantially higher among patients with SUD, including those without a pre-existing psychiatric condition. Suicide risk, with particular attention to thoughts of self-harm, should be evaluated as part of the initial patient assessment and each subsequent clinical assessment during withdrawal management using a validated tool [BJA-2023-0055]. Frequent safety checks should be implemented; the frequency of these checks should be determined by a qualified mental health professional with consideration for increased frequency when signs of depression, shame, guilt, helplessness, or worthlessness are present [BJA-2023-0056].",
+        "citations": [
+          "BJA-2023-0055",
+          "BJA-2023-0056"
+        ]
+      },
+      {
+        "id": "G15",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5721.2,
+        "answer": "Suicide risk should be assessed during withdrawal management. The frequency of suicide attempts is substantially higher among patients with SUD, including those without a pre-existing psychiatric condition. Suicide risk, with particular attention to thoughts of self-harm, should be evaluated as part of the initial patient assessment and each subsequent clinical assessment during withdrawal management using a validated tool [BJA-2023-0055]. The initial clinical assessment should evaluate risk for suicide [BJA-2023-0030].",
+        "citations": [
+          "BJA-2023-0055",
+          "BJA-2023-0030"
+        ]
+      },
+      {
+        "id": "G16",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 6866.1,
+        "answer": "Pregnant patients who are physically dependent on opioids should receive ongoing treatment with methadone or buprenorphine to prevent harm to the patient and fetus [BJA-2023-0128]. Opioid withdrawal, without ongoing medication treatment, during pregnancy and the postpartum period is also associated with high return-to-use rates and associated risk for overdose and overdose death [BJA-2023-0128]. Medications used to treat withdrawal, including benzodiazepines, can pose risks to the fetus, but the risks of unmanaged withdrawal often outweigh these risks [BJA-2023-0057].",
+        "citations": [
+          "BJA-2023-0128",
+          "BJA-2023-0057"
+        ]
+      },
+      {
+        "id": "G16",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 7140.3,
+        "answer": "Pregnant patients who are physically dependent on opioids should not undergo opioid withdrawal. Opioid withdrawal, without ongoing medication treatment, during pregnancy and the postpartum period is associated with high return-to-use rates and associated risk for overdose and overdose death [BJA-2023-0128]. Methadone or buprenorphine treatment should be initiated as early as possible during pregnancy since opioid withdrawal can increase the risk of miscarriage or premature delivery [BJA-2023-0129]. In most cases, pregnant women should be maintained on their medication for SUD throughout their pregnancy, unless contraindicated [BOP-2020-0010].",
+        "citations": [
+          "BJA-2023-0128",
+          "BJA-2023-0129",
+          "BOP-2020-0010"
+        ]
+      },
+      {
+        "id": "G17",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": false,
+        "gold_retrieved": false,
+        "total_ms": 5434.6,
+        "answer": "Patients in treatment for OUD who are not engaging in illegal drug use, including those who are prescribed medication to treat their OUD, are protected from discrimination and should be allowed to continue medications for SUD treatment in consultation with clinical providers [BJA-2023-0118]. Continuation of treatment while incarcerated lowers the odds of reincarceration and increases the odds of remaining in treatment [BJA-2023-0118].",
+        "citations": [
+          "BJA-2023-0118"
+        ]
+      },
+      {
+        "id": "G17",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5780.4,
+        "answer": "Yes, individuals being treated with buprenorphine or methadone should continue the medication while in jail [BJA-2023-0131]. Jails should assist with transfer to community-based treatment upon release [BJA-2023-0131]. Qualified health care professionals should ensure the patient has access to an adequate supply of buprenorphine or methadone to prevent interruption of dosing when the patient transitions to the community [BJA-2023-0131].",
+        "citations": [
+          "BJA-2023-0131"
+        ]
+      },
+      {
+        "id": "G18",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5871.0,
+        "answer": "Naloxone should be readily available in all housing units to individuals who are in custody [BJA-2023-0042]. Jails should consider making naloxone or a prescription for naloxone available to all patients with SUD upon release [BJA-2023-0132]. Additionally, jails are encouraged to establish policies and procedures for distributing naloxone or providing prescriptions for naloxone to patients, including those who are pregnant or postpartum, as they leave custody to reenter the community [BJA-2023-0059].",
+        "citations": [
+          "BJA-2023-0042",
+          "BJA-2023-0132",
+          "BJA-2023-0059"
+        ]
+      },
+      {
+        "id": "G18",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 4496.7,
+        "answer": "Naloxone should be readily available in all housing units to individuals who are in custody [BJA-2023-0042]. Jails should consider making naloxone or a prescription for naloxone available to all patients with SUD upon release [BJA-2023-0132].",
+        "citations": [
+          "BJA-2023-0042",
+          "BJA-2023-0132"
+        ]
+      },
+      {
+        "id": "G19",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": false,
+        "gold_retrieved": false,
+        "total_ms": 5456.6,
+        "answer": "When health care staff are not available, well-trained and supervised custody staff may conduct withdrawal monitoring based on patient-specific instructions from a provider [BJA-2023-0040]. The provider determines the frequency and type of monitoring [BJA-2023-0038]. Custody staff should not make decisions about the severity of changes in patient condition but should follow specific instructions [BJA-2023-0040].",
+        "citations": [
+          "BJA-2023-0040",
+          "BJA-2023-0038"
+        ]
+      },
+      {
+        "id": "G19",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": false,
+        "gold_retrieved": true,
+        "total_ms": 6242.0,
+        "answer": "When health care staff are not available, well-trained and supervised custody staff may conduct withdrawal monitoring [BJA-2023-0038]. This includes monitoring for changes in condition, vital signs, and using validated tools [BJA-2023-0040]. Custody staff should not make decisions about the severity of changes but follow patient-specific instructions [BJA-2023-0040]. They should also be trained to recognize withdrawal signs and symptoms and follow established protocols [BJA-2023-0044].",
+        "citations": [
+          "BJA-2023-0038",
+          "BJA-2023-0040",
+          "BJA-2023-0044"
+        ]
+      },
+      {
+        "id": "G20",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 7821.5,
+        "answer": "Withdrawal medications should be modified to account for age-related factors such as increased sensitivity to medications, drug-drug interactions, or co-existing conditions [BJA-2023-0062]. Management of withdrawal in older adults may require increased monitoring for side effects and/or lower medication dosages [BJA-2023-0062]. The threshold for transferring an older adult patient to a community facility and/or higher level of care for withdrawal management should be lower than it is for younger adults [BJA-2023-0062]. Elderly inmates are at increased risk of complications during withdrawal and may require careful monitoring, ongoing titration of medications, and even inpatient hospitalization [BOP-2020-0009].",
+        "citations": [
+          "BJA-2023-0062",
+          "BOP-2020-0009"
+        ]
+      },
+      {
+        "id": "G20",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 1,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5579.6,
+        "answer": "Withdrawal medications should be modified to account for age-related factors such as increased sensitivity to medications, drug-drug interactions, or co-existing conditions [BJA-2023-0062]. Management of withdrawal in older adults may require increased monitoring for side effects and/or lower medication dosages [BJA-2023-0062]. The threshold for transferring an older adult patient to a community facility and/or higher level of care for withdrawal management should be lower than it is for younger adults [BJA-2023-0062].",
+        "citations": [
+          "BJA-2023-0062"
+        ]
+      },
+      {
+        "id": "G21",
+        "method": "dense",
+        "answered": true,
+        "valid_citations": 2,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 4565.8,
+        "answer": "Patients experiencing withdrawal should have unimpeded access to water or electrolyte solution [BJA-2023-0049]. Maintaining fluids is essential to prevent dehydration and electrolyte imbalances, which can have serious health consequences [BJA-2023-0047].",
+        "citations": [
+          "BJA-2023-0049",
+          "BJA-2023-0047"
+        ]
+      },
+      {
+        "id": "G21",
+        "method": "hybrid",
+        "answered": true,
+        "valid_citations": 3,
+        "invalid_citations": 0,
+        "cited_gold": true,
+        "gold_retrieved": true,
+        "total_ms": 5986.3,
+        "answer": "Patients experiencing withdrawal should have unimpeded access to water or electrolyte solution [BJA-2023-0049]. Maintaining fluids is essential to prevent dehydration and electrolyte imbalances, which can have serious health consequences [BJA-2023-0047]. Supportive care includes nutritional supplementation, IV fluids, glucose, management of electrolyte abnormalities, and periodic clinical reevaluations, as clinically indicated [BJA-2023-0048].",
+        "citations": [
+          "BJA-2023-0049",
+          "BJA-2023-0047",
+          "BJA-2023-0048"
+        ]
+      }
+    ]
+  },
+  "isolation": {
+    "n_checks": 4079,
+    "violations": 0,
+    "generation_checks": 90,
+    "generation_violations": 0
+  },
+  "system": {
+    "embedding_and_index_load_s": 2.7,
+    "peak_process_rss_gb": 2.87,
+    "llm_load_s": 1.11,
+    "peak_mlx_memory_gb": 3.6,
+    "retrieval_dense_mean_ms": 26.3,
+    "retrieval_bm25_mean_ms": 0.2,
+    "retrieval_hybrid_mean_ms": 26.6,
+    "A_structured_only_mean_total_ms": 9357.7667,
+    "B_dense_rag_mean_total_ms": 12849.45,
+    "C_hybrid_rag_mean_total_ms": 12741.6667
+  },
+  "not_run": [
+    {
+      "experiment": "D \u00b7 Hybrid RAG + reranking",
+      "reason": "Optional in the project plan. Not run: it needs an additional local reranker model (e.g. Qwen3-Reranker-0.6B, ~1.2 GB) and adds a third model to a 16 GB machine. See the retrieval results for the remaining headroom a reranker could address."
+    }
+  ],
+  "caveats": [
+    "Small benchmark: 21 guideline questions and 12 patient cases \u00d7 3 configurations, single run at temperature 0. Differences of a few points are within noise.",
+    "All patient data is synthetic and the gap-detection rules were written knowing how the generator injects defects; 100% detection shows the code works as designed, not real-world sensitivity.",
+    "Gold guideline labels were assigned by the developer by reading the extracted chunks (no independent clinical review).",
+    "Patient fact accuracy uses regex extraction of score claims from the raw model output; claims phrased differently are not counted as stated.",
+    "Nothing here demonstrates clinical effectiveness or patient safety."
+  ],
+  "duration_s": 667.8
+}

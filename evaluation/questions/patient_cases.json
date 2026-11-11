@@ -1,0 +1,33 @@
+{
+  "_comment": "Patient-specific benchmark cases. The patient for each case is the first booking (by PatientID) matching `scenario` + `withdrawal_type` in synthetic_ground_truth, so cases stay valid if the dataset is regenerated with the same seed. Gold patient facts (earliest/latest score, change, count) are computed at evaluation time by an independent SQL implementation, not by backend/services/timeline.py. `guideline_gold` names an anchor set in `guideline_gold_sets` (manually checked against chunk text); null means no single gold guideline topic.",
+  "guideline_gold_sets": {
+    "alcohol_monitoring": [{"rec": "A-11"}, {"rec": "A-12"}, {"rec": "A-13"}, {"text": "at least every 8 hours during alcohol withdrawal management until the CIWA-Ar score remains below 10"}, {"text": "If total CIWA-Ar score > 8, repeat every hour"}],
+    "opioid_monitoring": [{"rec": "O-39"}, {"rec": "O-40"}, {"rec": "O-41"}, {"rec": "O-42"}, {"text": "COWS\\)? at least every 4 hours"}]
+  },
+  "cases": [
+    {"id": "C01", "scenario": "increasing", "withdrawal_type": "Alcohol", "hours": 12,
+     "question": "Summarize this patient's withdrawal progression over the last 12 hours and show the relevant clinical guidelines.", "guideline_gold": "alcohol_monitoring"},
+    {"id": "C02", "scenario": "increasing", "withdrawal_type": "Opioid", "hours": null,
+     "question": "How have the recorded COWS scores changed?", "guideline_gold": "opioid_monitoring"},
+    {"id": "C03", "scenario": "decreasing", "withdrawal_type": "Alcohol", "hours": null,
+     "question": "How have the recorded CIWA-Ar scores changed?", "guideline_gold": "alcohol_monitoring"},
+    {"id": "C04", "scenario": "fluctuating", "withdrawal_type": "Opioid", "hours": 24,
+     "question": "Summarize this patient's withdrawal progression over the last 24 hours.", "guideline_gold": "opioid_monitoring"},
+    {"id": "C05", "scenario": "stable", "withdrawal_type": "Alcohol", "hours": null,
+     "question": "What vital-sign measurements are documented, and what do the guidelines say about monitoring?", "guideline_gold": "alcohol_monitoring"},
+    {"id": "C06", "scenario": "missing_assessments", "withdrawal_type": "Opioid", "hours": null,
+     "question": "What information is missing from the retrieved record?", "guideline_gold": "opioid_monitoring"},
+    {"id": "C07", "scenario": "missing_vitals", "withdrawal_type": "Alcohol", "hours": null,
+     "question": "What information is missing from the retrieved record?", "guideline_gold": "alcohol_monitoring"},
+    {"id": "C08", "scenario": "irregular_intervals", "withdrawal_type": "Alcohol", "hours": null,
+     "question": "Summarize the timing of recorded assessments, any gaps, and the relevant monitoring guidance.", "guideline_gold": "alcohol_monitoring"},
+    {"id": "C09", "scenario": "medication_documentation_gaps", "withdrawal_type": "Opioid", "hours": null,
+     "question": "Summarize documented medication administrations over this period.", "guideline_gold": null},
+    {"id": "C10", "scenario": "conflicting_documentation", "withdrawal_type": "Alcohol", "hours": null,
+     "question": "Summarize this patient's withdrawal progression and note any documentation inconsistencies.", "guideline_gold": "alcohol_monitoring"},
+    {"id": "C11", "scenario": "incomplete_monitoring", "withdrawal_type": "Opioid", "hours": null,
+     "question": "Summarize the monitoring record and what is missing from it.", "guideline_gold": "opioid_monitoring"},
+    {"id": "C12", "scenario": "conflicting_documentation", "withdrawal_type": "Opioid", "hours": 24,
+     "question": "Which relevant guideline passages discuss withdrawal monitoring for this patient?", "guideline_gold": "opioid_monitoring"}
+  ]
+}
